@@ -4,15 +4,13 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Emilio Blas | Portafolio de Software y Mecatrónica</title>
+    <title>Emilio Blas | Software y Mecatrónica para tu empresa</title>
+    <meta content="Emilio Blas, técnico en mecatrónica e ingeniero en software. Software a la medida, automatización y prototipado para empresas." name="description" id="metaDesc" />
     <meta
-        content="Portafolio profesional de Shuha Emilio Blas Santos: desarrollo de software, Java, Python, bases de datos, Arduino, CAD, PCB y mecatrónica."
-        name="description" id="metaDesc" />
-    <meta
-        content="Emilio Blas, ingeniería en software, Java, Python, SQL, Arduino, PIC, CAD, PCB, CNC, mecatrónica, portafolio"
+        content="Emilio Blas, técnico en mecatrónica, ingeniero en software, software a la medida, automatización, Java, Python, SQL, Arduino, PIC, CAD, PCB, CNC"
         name="keywords" />
-    <meta content="Emilio Blas | Portafolio de Software y Mecatrónica" property="og:title" />
-    <meta content="Proyectos académicos, software, sistemas embebidos y prototipado." property="og:description" />
+    <meta content="Emilio Blas | Software y Mecatrónica para tu empresa" property="og:title" />
+    <meta content="Software a la medida, automatización y prototipado para empresas." property="og:description" />
     <meta content="website" property="og:type" />
     <style>
         /* ================= VARIABLES (MODO CLARO/OSCURO) ================= */
@@ -840,9 +838,338 @@
                 transform: none;
             }
         }
+    
+        /* ================= SELECTOR DE IDIOMA E ICONOS DE TEMA ================= */
+        .lang-select {
+            background: var(--paper);
+            border: 3px solid var(--border-color);
+            color: var(--text-color);
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-weight: 900;
+            font-size: .9rem;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .lang-select:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .lang-select option {
+            background: var(--paper);
+            color: var(--text-color);
+        }
+
+        button.theme-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 10px;
+        }
+
+        .theme-btn .icon {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2.6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .theme-btn .icon-sun {
+            display: none;
+        }
+
+        body.dark-mode .theme-btn .icon-sun {
+            display: block;
+        }
+
+        body.dark-mode .theme-btn .icon-moon {
+            display: none;
+        }
+
+        /* ================= BLOQUES DE VENTA ================= */
+        .module-grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .step-card .step-num {
+            display: inline-grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border: 3px solid var(--border-color);
+            background: var(--text-color);
+            color: var(--bg-color);
+            font-family: 'Arial Black', Impact, sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .cta-band {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 44px;
+            padding: 28px;
+            background: var(--text-color);
+            color: var(--bg-color);
+            border: 3px solid var(--border-color);
+            box-shadow: 10px 10px 0 var(--btn-hover);
+        }
+
+        .cta-band h2 {
+            font-family: 'Arial Black', Impact, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -.03em;
+            line-height: 1.05;
+            font-size: clamp(1.3rem, 2.4vw, 2rem);
+        }
+
+        .cta-band button {
+            background: var(--bg-color);
+            color: var(--text-color);
+            border: 3px solid var(--bg-color);
+            padding: 14px 26px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .cta-band button:hover {
+            background: transparent;
+            color: var(--bg-color);
+        }
+
+        .soft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 16px;
+            margin: 16px 0 24px;
+        }
+
+        .soft-card {
+            border: 3px solid var(--border-color);
+            padding: 18px;
+            background: var(--paper);
+        }
+
+        .soft-card h3 {
+            font-size: 1.1rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .soft-card:hover {
+            box-shadow: 6px 6px 0 var(--border-color);
+        }
+
+        /* ================= TARJETAS DE PROYECTO (sin GitHub, solo lo esencial) ================= */
+        .project-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: 3px solid var(--border-color);
+            background: var(--btn-hover);
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .project-image .doodle {
+            width: 40%;
+            height: auto;
+            max-height: 90%;
+        }
+
+        .project-image img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: var(--paper);
+        }
+
+        .project-image.contain img {
+            object-fit: contain;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .project-card .project-footer {
+            padding-top: 6px;
+        }
+
+        /* ================= POP-UP DE FICHA TÉCNICA ================= */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        dialog.modal {
+            margin: auto;
+            padding: 0;
+            width: min(780px, calc(100vw - 32px));
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+            border: 4px solid var(--border-color);
+            background: var(--paper);
+            color: var(--text-color);
+            box-shadow: 14px 14px 0 var(--border-color);
+        }
+
+        dialog.modal[open] {
+            animation: fadeIn .25s ease;
+        }
+
+        dialog.modal::backdrop {
+            background: rgba(13, 13, 13, .62);
+        }
+
+        .modal-head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            border-bottom: 3px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background: var(--paper);
+            z-index: 1;
+        }
+
+        .modal-head .modal-doodle .doodle {
+            width: 64px;
+            height: 64px;
+        }
+
+        .modal-title {
+            flex: 1;
+            font-family: 'Arial Black', Impact, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -.03em;
+            line-height: 1;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+        }
+
+        .modal-x {
+            border: 3px solid var(--border-color);
+            background: transparent;
+            color: var(--text-color);
+            width: 44px;
+            height: 44px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-x:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .modal-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .modal-content p {
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        .modal-h {
+            font-family: 'Arial Black', Impact, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -.02em;
+            font-size: 1.05rem;
+            border-bottom: 3px solid var(--border-color);
+            padding-bottom: 6px;
+            margin-top: 8px;
+        }
+
+        .modal-problem {
+            border: 3px solid var(--border-color);
+            background: var(--bg-color);
+            padding: 16px;
+        }
+
+        .spec-list {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .spec-list li {
+            position: relative;
+            padding-left: 26px;
+            line-height: 1.45;
+        }
+
+        .spec-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: .35em;
+            width: 12px;
+            height: 12px;
+            border: 3px solid var(--border-color);
+            background: var(--paper);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 0 24px 24px;
+        }
+
+        .modal-actions .cv-link {
+            margin-top: 0;
+        }
+
+        .site-footer .credit {
+            font-weight: 500;
+            font-size: .85rem;
+            opacity: .8;
+        }
+
+        @media (max-width: 900px) {
+            .module-grid.three {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .modal-content,
+            .modal-head {
+                padding: 16px;
+            }
+
+            .modal-actions {
+                padding: 0 16px 16px;
+            }
+
+            .modal-head .modal-doodle {
+                display: none;
+            }
+
+            .cta-band {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
-
 <body>
     <!-- CABECERA -->
     <header>
@@ -851,21 +1178,19 @@
             <div class="nav-link active-nav" data-en="Home" onclick="openTab('inicio')">Inicio</div>
             <div class="nav-link" data-en="About Me" onclick="openTab('info')">Mi Información</div>
             <div class="nav-link" data-en="Projects" onclick="openTab('proyectos')">Mis Proyectos</div>
-            <div class="nav-link" data-en="Contacts" onclick="openTab('contactos')">Contactos</div>
+            <div class="nav-link" data-en="Contact" onclick="openTab('contactos')">Contactos</div>
         </nav>
         <div class="portfolio-links" aria-label="Perfiles profesionales" data-en-aria-label="Professional profiles">
             <a href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                aria-label="Abrir GitHub de Emilio Blas" data-en-aria-label="Open Emilio Blas' GitHub">GitHub ↗</a>
+                aria-label="Abrir GitHub de Emilio Blas" data-en-aria-label="Open Emilio Blas&#x27; GitHub">GitHub ↗</a>
             <a href="https://www.linkedin.com/in/shuhasnulls21" rel="noopener noreferrer" target="_blank"
-                aria-label="Abrir LinkedIn de Emilio Blas" data-en-aria-label="Open Emilio Blas' LinkedIn">LinkedIn
-                ↗</a>
+                aria-label="Abrir LinkedIn de Emilio Blas" data-en-aria-label="Open Emilio Blas&#x27; LinkedIn">LinkedIn ↗</a>
         </div>
         <div class="controls">
-            <button class="control-btn" id="langBtn" onclick="toggleLang()">EN</button>
-            <button class="control-btn" id="themeBtn" onclick="toggleTheme()">🌙</button>
+            <select class="lang-select" id="langSelect" onchange="setLang(this.value)" aria-label="Idioma" data-en-aria-label="Language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="de">Deutsch</option><option value="ru">Русский</option></select>
+            <button class="control-btn theme-btn" id="themeBtn" onclick="toggleTheme()" type="button" aria-label="Cambiar entre modo claro y oscuro" data-en-aria-label="Switch between light and dark mode"><svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7"/></svg></button>
         </div>
     </header>
-
     <main>
         <!-- ================= INICIO ================= -->
         <section class="tab-content active" id="inicio">
@@ -980,71 +1305,55 @@
             </div>
 
             <div class="hero-layout">
-                <!-- IZQUIERDA: texto de presentación y luego foto -->
                 <div class="hero-left">
                     <div class="hero-text">
                         <h2 class="hero-subtitle" data-en="I AM EMILIO BLAS">SOY EMILIO BLAS</h2>
-                        <p class="hero-desc"
-                            data-en="Software developer experienced in desktop applications, relational databases, and mechatronics. Focused on creating scalable architectures and efficient interfaces.">
-                            Desarrollador de software con experiencia en aplicaciones de escritorio, bases de datos
-                            relacionales y mecatrónica. Enfocado en la creación de arquitecturas escalables e interfaces
-                            eficientes.</p>
-                        <button class="leer-mas" onclick="openTab('info')"><span data-en="READ MORE">LEER MÁS</span>
-                            →</button>
+                        <p class="hero-desc" data-en="Mechatronics technician and software engineer. I turn manual processes into reliable systems that save your company time and reduce errors.">Técnico en mecatrónica e ingeniero en software. Convierto procesos manuales en sistemas confiables que ahorran tiempo y reducen errores en tu empresa.</p>
                         <div class="hero-ctas">
-                            <a href="#proyectos" onclick="openTab('proyectos');return false;"
-                                data-en="See projects ↓">Ver proyectos ↓</a>
-                            <a href="#contactos" onclick="openTab('contactos');return false;"
-                                data-en="Get in touch ↗">Contactar ↗</a>
+                            <a data-en="Request a proposal" href="#contactos" onclick="openTab('contactos');return false;">Solicitar una propuesta</a>
+                            <a data-en="See projects ↓" href="#proyectos" onclick="openTab('proyectos');return false;">Ver proyectos ↓</a>
                         </div>
                     </div>
                     <div class="hero-photo">
                         <div class="foto-perfil-wrapper">
                             <div class="foto-perfil">
-                                <span data-en="[YOUR PHOTO]">[TU FOTO]</span>
-                                <img src="Emi_F.jpg" alt="Foto de Emilio Blas" data-en-alt="Photo of Emilio Blas"
-                                    onerror="this.style.display='none'" />
+                                <img src="assets/Emi_F2.jpg" alt="Foto de Emilio Blas" data-en-alt="Photo of Emilio Blas" onerror="this.style.display='none'" />
                             </div>
                         </div>
                         <div class="social-actions">
-                            <a class="social-link" href="https://github.com/snullsh19" rel="noopener noreferrer"
-                                target="_blank">GitHub ↗</a>
-                            <a class="social-link" href="https://www.linkedin.com/in/shuhasnulls21"
-                                rel="noopener noreferrer" target="_blank">LinkedIn ↗</a>
+                            <a class="social-link" href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+                            <a class="social-link" href="https://www.linkedin.com/in/shuhasnulls21" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- DERECHA: frase y rol -->
                 <div class="hero-right">
-                    <h1 class="hero-tagline" data-en="Solutions for all your needs">Soluciones para todas tus
-                        necesidades</h1>
-                    <div class="role-box" data-en="Software engineer">Ingeniero de software</div>
+                    <h1 class="hero-tagline" data-en="Fewer manual tasks. More results.">Menos tareas manuales. Más resultados.</h1>
+                    <div class="role-box" data-en="Mechatronics technician · Software engineer">Técnico en mecatrónica · Ingeniero en software</div>
                 </div>
             </div>
 
-            <div class="module-grid" style="margin-top:56px">
-                <article class="module-card">
-                    <h3 data-en="Software development">Desarrollo de software</h3>
-                    <p class="muted"
-                        data-en="Java, Python, SQL, object-oriented programming, databases and modular design.">Java,
-                        Python, SQL, programación orientada a objetos, bases de datos y diseño modular.</p>
-                </article>
-                <article class="module-card">
-                    <h3 data-en="Mechatronics and embedded systems">Mecatrónica y sistemas embebidos</h3>
-                    <p class="muted"
-                        data-en="Arduino, electronics, stepper motors, automation, CAD design and CNC prototyping.">
-                        Arduino, electrónica, motores paso a paso, automatización, diseño CAD y prototipado CNC.</p>
-                </article>
+            <h2 class="section-heading" data-en="What I can do for your company">Qué puedo hacer por tu empresa</h2>
+            <div class="module-grid three">
+                <article class="module-card"><h3 data-en="Custom software">Software a la medida</h3><p class="muted" data-en="Applications and databases that organize your operations and prevent data-entry errors. Java, Python and SQL.">Aplicaciones y bases de datos que ordenan tu operación y evitan errores de captura. Java, Python y SQL.</p></article>
+                <article class="module-card"><h3 data-en="Automation and electronics">Automatización y electrónica</h3><p class="muted" data-en="Arduino and PIC systems that automate repetitive tasks and cut operating time.">Sistemas con Arduino y PIC que automatizan tareas repetitivas y reducen tiempos de operación.</p></article>
+                <article class="module-card"><h3 data-en="Prototyping and design">Prototipado y diseño</h3><p class="muted" data-en="CAD, PCB and CNC prototypes to validate your idea before investing in production.">Diseño CAD, PCB y prototipos CNC para validar tu idea antes de invertir en producción.</p></article>
             </div>
+
+            <h2 class="section-heading" data-en="How we work together">Cómo trabajamos juntos</h2>
+            <div class="module-grid three">
+                <article class="module-card step-card"><span class="step-num">1</span><h3 data-en="You tell me the problem">Me cuentas tu problema</h3><p class="muted" data-en="A call or an email to understand what you need.">Una llamada o un correo para entender qué necesitas.</p></article>
+                <article class="module-card step-card"><span class="step-num">2</span><h3 data-en="You get a clear proposal">Recibes una propuesta clara</h3><p class="muted" data-en="Scope, timeline and deliverables defined before we start.">Alcance, plazo y entregables definidos antes de empezar.</p></article>
+                <article class="module-card step-card"><span class="step-num">3</span><h3 data-en="I deliver and document">Entrego y documento</h3><p class="muted" data-en="A tested, documented solution ready to use.">Solución probada, documentada y lista para usar.</p></article>
+            </div>
+
+            <div class="cta-band"><h2 data-en="Have a process you want to improve?">¿Tienes un proceso que quieres mejorar?</h2><button data-en="Let&#x27;s talk about your project" type="button" onclick="openTab('contactos')">Hablemos de tu proyecto</button></div>
         </section>
 
         <!-- ================= MI INFORMACIÓN ================= -->
         <section class="tab-content" id="info">
             <button class="back-btn" data-en="← BACK TO HOME" onclick="openTab('inicio')">← REGRESAR AL INICIO</button>
             <div class="page-head">
-                <h1 class="hero-subtitle" data-en="ABOUT ME" style="font-size:2.5rem">MI INFORMACIÓN</h1>
-                <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+                <h1 class="hero-subtitle" data-en="ABOUT ME" style="font-size:2.5rem">MI INFORMACIÓN</h1><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
                     <path class="f" d="M70 140 Q56 164 62 186 L138 186 Q144 164 130 140" />
                     <path class="f"
                         d="M44 70 L50 30 L82 54 Q100 50 118 54 L150 30 L156 70 Q164 100 148 124 Q132 142 100 142 Q68 142 52 124 Q36 100 44 70 Z" />
@@ -1063,21 +1372,12 @@
             <div class="module-grid">
                 <article class="module-card">
                     <h3 data-en="Professional profile">Perfil profesional</h3>
-                    <p class="muted"
-                        data-en="I am a Software Engineering student at Centro Universitario UAEM Tianguistenco. I combine software development with electronics and mechatronics, looking for functional, documented and maintainable solutions.">
-                        Soy estudiante de Ingeniería en Software en el Centro Universitario UAEM Tianguistenco. Integro
-                        desarrollo de software con electrónica y mecatrónica, buscando soluciones funcionales,
-                        documentadas y mantenibles.</p>
+                    <p class="muted" data-en="I am a mechatronics technician and software engineer. I combine programming, electronics and automation to deliver functional, documented and easy-to-maintain solutions.">Soy técnico en mecatrónica e ingeniero en software. Combino programación, electrónica y automatización para entregar soluciones funcionales, documentadas y fáciles de mantener.</p>
                 </article>
                 <article class="module-card">
-                    <h3 data-en="Areas of interest">Áreas de interés</h3>
-                    <div class="skill-list"><span class="tag">Java / POO</span><span class="tag">Python</span><span
-                            class="tag">SQL</span><span class="tag">Arduino</span><span class="tag">C/C++</span><span
-                            class="tag">GRBL / CNC</span><span class="tag" data-en="CAD design">Diseño CAD</span><span
-                            class="tag">Git</span></div>
-                    <p class="muted"
-                        data-en="Focus: clean code, technical documentation, continuous learning and teamwork.">Enfoque:
-                        código limpio, documentación técnica, aprendizaje continuo y trabajo colaborativo.</p>
+                    <h3 data-en="Areas of expertise">Áreas de especialidad</h3>
+                    <div class="skill-list"><span class="tag" data-en="Java / OOP">Java / POO</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Arduino</span><span class="tag">C/C++</span><span class="tag">GRBL / CNC</span><span class="tag" data-en="CAD design">Diseño CAD</span><span class="tag">Git</span></div>
+                    <p class="muted" data-en="Focus: clean code, technical documentation, continuous learning and teamwork.">Enfoque: código limpio, documentación técnica, aprendizaje continuo y trabajo en equipo.</p>
                 </article>
             </div>
 
@@ -1085,72 +1385,154 @@
             <div class="module-grid">
                 <article class="module-card">
                     <h3>Software</h3>
-                    <p data-en="Java, Python, SQL, OOP, desktop interfaces and data modeling.">Java, Python, SQL, POO,
-                        interfaces de escritorio y modelado de datos.</p>
+                    <p data-en="Java, Python, SQL, OOP, desktop interfaces and data modeling.">Java, Python, SQL, POO, interfaces de escritorio y modelado de datos.</p>
                 </article>
                 <article class="module-card">
                     <h3>Hardware</h3>
-                    <p data-en="Arduino, sensors, drivers, stepper motors, prototypes and embedded systems.">Arduino,
-                        sensores, drivers, motores paso a paso, prototipos y sistemas embebidos.</p>
+                    <p data-en="Arduino, sensors, drivers, stepper motors, prototypes and embedded systems.">Arduino, sensores, drivers, motores paso a paso, prototipos y sistemas embebidos.</p>
                 </article>
             </div>
 
+            <h2 class="section-heading" data-en="Soft skills">Habilidades blandas</h2>
+            <p class="muted" data-en="What I bring to the team beyond the technical.">Lo que aporto al equipo, además de lo técnico.</p>
+            <div class="soft-grid"><article class="soft-card"><h3 data-en="Conflict resolution">Resolución de conflictos</h3><p class="muted" data-en="I look for agreements that keep the team moving forward.">Busco acuerdos que mantengan al equipo avanzando.</p></article><article class="soft-card"><h3 data-en="Team management">Administración de equipos</h3><p class="muted" data-en="I organize tasks, priorities and owners to meet deadlines.">Organizo tareas, prioridades y responsables para cumplir los plazos.</p></article><article class="soft-card"><h3 data-en="Clear communication">Comunicación clara</h3><p class="muted" data-en="I explain technical topics in language managers and clients understand.">Explico temas técnicos en un lenguaje que gerencia y clientes entienden.</p></article><article class="soft-card"><h3 data-en="Leadership">Liderazgo</h3><p class="muted" data-en="I guide the team by example and with clear goals.">Guío al equipo con el ejemplo y con objetivos claros.</p></article><article class="soft-card"><h3 data-en="Analytical thinking">Pensamiento analítico</h3><p class="muted" data-en="I break complex problems into concrete steps.">Divido problemas complejos en pasos concretos.</p></article><article class="soft-card"><h3 data-en="Adaptability">Adaptabilidad</h3><p class="muted" data-en="I adapt quickly to new tools and changing priorities.">Me ajusto rápido a nuevas herramientas y cambios de prioridad.</p></article><article class="soft-card"><h3 data-en="Time management">Gestión del tiempo</h3><p class="muted" data-en="I plan realistic deadlines and follow up consistently.">Planeo plazos realistas y doy seguimiento constante.</p></article><article class="soft-card"><h3 data-en="Teamwork">Trabajo en equipo</h3><p class="muted" data-en="I collaborate across technical and business areas.">Colaboro entre áreas técnicas y de negocio.</p></article></div>
+
             <h2 class="section-heading" data-en="Education and background">Formación y trayectoria</h2>
-            <h1 class="hero-subtitle" data-en="TIMELINE" style="font-size:2.5rem;margin-bottom:30px;margin-top:40px">
-                LÍNEA DEL TIEMPO</h1>
-            <div class="timeline">
+            <div class="timeline" style="margin-top:28px">
                 <div class="timeline-item">
-                    <h3 data-en="2024 · Technical training">2024 · Formación técnica</h3>
-                    <p data-en="Training in mechatronics, electronics and prototyping.">Formación en mecatrónica,
-                        electrónica y prototipado.</p>
+                    <h3 data-en="Mechatronics technician">Técnico en mecatrónica</h3>
+                    <p data-en="Solid foundation in electronics, automation and prototyping.">Base sólida en electrónica, automatización y prototipado.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3 data-en="2025–2026 · Software Engineering">2025–2026 · Ingeniería en Software</h3>
-                    <p
-                        data-en="Academic projects with Java, Python, databases and embedded systems at UAEM Tianguistenco.">
-                        Desarrollo de proyectos académicos con Java, Python, bases de datos y sistemas embebidos en UAEM
-                        Tianguistenco.</p>
+                    <h3 data-en="Software engineer">Ingeniero en software</h3>
+                    <p data-en="Development with Java, Python and databases, integrated with embedded systems.">Desarrollo con Java, Python y bases de datos, integrado con sistemas embebidos.</p>
                 </div>
             </div>
 
             <div class="module-grid">
                 <article class="cert-card">
                     <h3 data-en="Languages">Idiomas</h3>
-                    <p class="muted" data-en="Technical English: reading programming documentation and resources.">
-                        Inglés técnico: lectura de documentación y recursos de programación.</p>
+                    <p class="muted" data-en="Technical English: reading programming documentation and resources.">Inglés técnico: lectura de documentación y recursos de programación.</p>
                 </article>
                 <article class="testimonial-card">
                     <h3 data-en="Work philosophy">Filosofía de trabajo</h3>
-                    <p
-                        data-en="Iterative development, clear documentation, Git version control and attention to software quality and hardware/software integration.">
-                        Desarrollo iterativo, documentación clara, control de versiones con Git y atención a la calidad
-                        del software y la integración hardware/software.</p>
+                    <p data-en="Iterative development, clear documentation, Git version control and attention to software quality and hardware/software integration.">Desarrollo iterativo, documentación clara, control de versiones con Git y atención a la calidad del software y la integración hardware/software.</p>
                 </article>
             </div>
+
+            <div class="cta-band"><h2 data-en="Shall we talk about your project?">¿Hablamos de tu proyecto?</h2><button data-en="Let&#x27;s talk about your project" type="button" onclick="openTab('contactos')">Hablemos de tu proyecto</button></div>
         </section>
 
         <!-- ================= MIS PROYECTOS ================= -->
         <section class="tab-content" id="proyectos">
             <button class="back-btn" data-en="← BACK TO HOME" onclick="openTab('inicio')">← REGRESAR AL INICIO</button>
-            <h1 class="hero-subtitle" data-en="MY PROJECTS" style="font-size:2.5rem;margin-bottom:20px">MIS PROYECTOS
-            </h1>
-            <p class="muted"
-                data-en="Modular catalog of software and mechatronics projects. Use the filters to explore by area or technology.">
-                Catálogo modular de proyectos de software y mecatrónica. Usa los filtros para explorar por área o
-                tecnología.</p>
+            <h1 class="hero-subtitle" data-en="MY PROJECTS" style="font-size:2.5rem;margin-bottom:20px">MIS PROYECTOS</h1>
+            <p class="muted" data-en="Examples of the kind of solutions I can build for your company. Filter by area or technology.">Ejemplos del tipo de soluciones que puedo construir para tu empresa. Filtra por área o tecnología.</p>
             <div class="filter-row" role="group" aria-label="Filtrar proyectos" data-en-aria-label="Filter projects">
-                <button class="filter-btn active" onclick="filterProjects('todos',this)" data-en="All">Todos</button>
-                <button class="filter-btn" onclick="filterProjects('software',this)">Software</button>
-                <button class="filter-btn" onclick="filterProjects('mecatronica',this)"
-                    data-en="Mechatronics">Mecatrónica</button>
-                <button class="filter-btn" onclick="filterProjects('java',this)">Java</button>
-                <button class="filter-btn" onclick="filterProjects('arduino',this)">Arduino / CNC</button>
+                <button class="filter-btn active" onclick="filterProjects('todos',this)" data-en="All">Todos</button><button class="filter-btn" onclick="filterProjects('software',this)">Software</button><button class="filter-btn" onclick="filterProjects('mecatronica',this)" data-en="Mechatronics">Mecatrónica</button><button class="filter-btn" onclick="filterProjects('java',this)">Java</button><button class="filter-btn" onclick="filterProjects('arduino',this)">Arduino / CNC</button>
             </div>
 
-            <div class="project-grid" id="projectGrid">
+            <div class="project-grid" id="projectGrid"></div>
 
-                <article class="project-card" data-category="mecatronica arduino">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+            <div class="cta-band"><h2 data-en="Does any of this fit what you need?">¿Algo de esto encaja con lo que necesitas?</h2><button data-en="Let&#x27;s talk about your project" type="button" onclick="openTab('contactos')">Hablemos de tu proyecto</button></div>
+
+            <h2 class="section-heading" data-en="Public GitHub activity">Actividad pública de GitHub</h2>
+            <div class="module-card">
+                <h3 data-en="snullsh19 · Repositories and languages">snullsh19 · Repositorios y lenguajes</h3>
+                <p class="muted" data-en="Statistics are fetched from GitHub; they may take time to load or not appear if the external service is rate-limited.">Las estadísticas se consultan desde GitHub; pueden tardar en cargar o no mostrarse si el servicio externo está limitado.</p>
+                <div class="stats-grid">
+                    <div class="stat-box"><strong>GitHub</strong><span data-en="Public profile">Perfil público</span></div>
+                    <div class="stat-box"><strong>Repos</strong><span data-en="Explore projects">Explorar proyectos</span></div>
+                    <div class="stat-box"><strong>Code</strong><span data-en="Languages and activity">Lenguajes y actividad</span></div>
+                </div>
+                <div class="module-grid">
+                    <img id="ghStats" alt="Estadísticas públicas de GitHub" data-en-alt="Public GitHub statistics" loading="lazy"
+                        src="https://github-readme-stats.vercel.app/api?username=snullsh19&show_icons=true&hide_border=true&theme=default"
+                        style="width:100%;max-width:100%" />
+                    <img id="ghLangs" alt="Lenguajes más usados en GitHub" data-en-alt="Most used languages on GitHub" loading="lazy"
+                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=snullsh19&layout=compact&hide_border=true&theme=default"
+                        style="width:100%;max-width:100%" />
+                </div>
+                <a class="cv-link" data-en="Explore GitHub ↗" href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank">Explorar GitHub ↗</a>
+            </div>
+
+            <a class="cv-link" data-en="VIEW PROFESSIONAL CV (1 PAGE)" href="https://drive.google.com/file/d/1K-tjVmKq2zcGeQswU8ZvAeM1GLRkO08m/edit" target="_blank" rel="noopener noreferrer">VER CV PROFESIONAL (1 HOJA)</a>
+        </section>
+
+        <!-- ================= CONTACTOS ================= -->
+        <section class="tab-content" id="contactos">
+            <button class="back-btn" data-en="← BACK TO HOME" onclick="openTab('inicio')">← REGRESAR AL INICIO</button>
+            <div class="status-pill"><span class="status-dot"></span><span data-en="Available for new software and hardware projects">Disponible para nuevos proyectos de software y hardware</span></div>
+            <div class="contact-grid">
+                <div>
+                    <div class="page-head">
+                        <h1 class="hero-subtitle" data-en="CONTACT" style="font-size:2.5rem">CONTACTO</h1><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+                            <path d="M78 172 Q40 190 14 170" />
+                            <g transform="rotate(18 100 100)">
+                                <rect class="f" x="78" y="30" width="44" height="100" />
+                                <rect class="f" x="78" y="14" width="44" height="18" rx="5" />
+                                <path class="f" d="M78 130 L122 130 L100 176 Z" />
+                                <path class="k" d="M91 154 L109 154 L100 176 Z" />
+                                <g transform="translate(90 82) scale(0.72)">
+                                    <ellipse class="f" rx="11" ry="13" stroke-width="4.5" />
+                                    <circle class="k pupil" cx="2" cy="3" r="6.5" />
+                                    <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
+                                </g>
+                                <g transform="translate(110 82) scale(0.72)">
+                                    <ellipse class="f" rx="11" ry="13" stroke-width="4.5" />
+                                    <circle class="k pupil" cx="2" cy="3" r="6.5" />
+                                    <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
+                                </g>
+                                <path d="M95 106 Q100 110 105 106" stroke-width="4" />
+                            </g>
+                        </svg>
+                    </div>
+                    <p style="font-size:1.1rem;margin:12px 0"><strong data-en="EMAIL:">CORREO:</strong> <a
+                            href="mailto:School.emilioblas@gmail.com"
+                            style="color:var(--text-color);font-weight:bold">School.emilioblas@gmail.com</a></p>
+                    <div class="social-actions">
+                        <a class="cv-link" href="https://github.com/snullsh19" rel="noopener noreferrer" style="margin-top:0" target="_blank">GitHub ↗</a>
+                        <a class="cv-link" href="https://www.linkedin.com/in/shuhasnulls21" rel="noopener noreferrer" style="margin-top:0" target="_blank">LinkedIn ↗</a>
+                        <button class="mini-btn" data-en="Copy email" type="button" onclick="copyEmail()">Copiar correo</button>
+                    </div>
+                    <p aria-live="polite" class="muted" id="copyFeedback"></p>
+                    <div class="qr-box">
+                        <h3 data-en="Save contact">Guardar contacto</h3>
+                        <p class="muted" data-en="Scan the code to save my name and email to your contacts.">Escanea el código para guardar mi nombre y correo en tus contactos.</p>
+                        <img alt="Código QR con el nombre y correo de Shuha Emilio Blas Santos" data-en-alt="QR code with the name and email of Shuha Emilio Blas Santos" loading="lazy"
+                            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ABlas%20Santos%3BShuha%20Emilio%3B%3B%3B%0AFN%3AShuha%20Emilio%20Blas%20Santos%0AEMAIL%3ASchool.emilioblas%40gmail.com%0AEND%3AVCARD" />
+                        <p><strong>Shuha Emilio Blas Santos</strong><br />School.emilioblas@gmail.com</p>
+                        <p style="margin-top:8px"><a data-en="Send email" href="mailto:School.emilioblas@gmail.com">Enviar correo</a></p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-heading" data-en="Write to me">Escríbeme</h2>
+                    <p class="muted" data-en="Leave me a message and I will reply by email.">Déjame un mensaje y te responderé por correo.</p>
+                    <form class="module-card" onsubmit="submitContact(event)"><div class="form-field"><label data-en="Full name *" for="contactName">Nombre completo *</label><input autocomplete="name" id="contactName" name="name" placeholder="Tu nombre o empresa" data-en-placeholder="Your name or company" required /></div><div class="form-field"><label data-en="Email address *" for="contactEmail">Correo electrónico *</label><input autocomplete="email" id="contactEmail" name="email" placeholder="correo@ejemplo.com" data-en-placeholder="email@example.com" required type="email" /></div><div class="form-field"><label data-en="Contact type *" for="contactSubject">Tipo de contacto *</label><select id="contactSubject" name="subject" required><option data-en="Select an option" value="">Selecciona una opción</option><option data-en="Get a project quote">Cotizar un proyecto</option><option data-en="Software development">Desarrollo de software</option><option data-en="Mechatronics / embedded systems">Mecatrónica / sistemas embebidos</option><option data-en="Collaboration or partnership">Colaboración o alianza</option><option data-en="Other">Otro</option></select></div><div class="form-field"><label data-en="Message *" for="contactMessage">Mensaje *</label><textarea id="contactMessage" name="message" placeholder="Cuéntame brevemente tu propuesta" data-en-placeholder="Briefly tell me about your proposal" required></textarea></div><button class="cv-link" data-en="Prepare email" type="submit">Preparar correo</button><p class="muted" data-en="Privacy notice: the data entered is used only to prepare the contact message. It is not stored on this site.">Aviso de privacidad: los datos introducidos se usan únicamente para preparar el mensaje de contacto. No se almacenan en este sitio.</p></form>
+
+                    <h2 class="section-heading" data-en="Request a quote">Solicita una cotización</h2>
+                    <form class="module-card" onsubmit="submitProjectRequest(event)"><div class="form-field"><label data-en="Project type" for="serviceType">Tipo de proyecto</label><select id="serviceType"><option data-en="Software development">Desarrollo de software</option><option data-en="Database">Base de datos</option><option data-en="Automation / Arduino">Automatización / Arduino</option><option data-en="CNC design or prototype">Diseño o prototipo CNC</option><option data-en="Technical consulting">Consultoría técnica</option></select></div><div class="form-field"><label data-en="Tentative deadline" for="serviceDeadline">Plazo tentativo</label><select id="serviceDeadline"><option data-en="1–2 weeks">1–2 semanas</option><option data-en="3–4 weeks">3–4 semanas</option><option data-en="More than a month">Más de un mes</option><option data-en="To be defined">Por definir</option></select></div><div class="form-field"><label data-en="Estimated budget (optional)" for="serviceBudget">Presupuesto estimado (opcional)</label><input id="serviceBudget" placeholder="Rango estimado" data-en-placeholder="Estimated range" /></div><div class="form-field"><label data-en="Description / requirements" for="serviceDetails">Descripción / requisitos</label><textarea id="serviceDetails" placeholder="Describe el objetivo y los requisitos iniciales" data-en-placeholder="Describe the goal and initial requirements"></textarea></div><button class="cv-link" data-en="Request quote" type="submit">Solicitar cotización</button></form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- POP-UP DE FICHA TÉCNICA -->
+    <dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+        <div class="modal-head">
+            <div class="modal-doodle" id="modalDoodle" aria-hidden="true"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <button class="modal-x" id="modalX" type="button" aria-label="Cerrar">×</button>
+        </div>
+        <div class="modal-content" id="modalBody"></div>
+        <div class="modal-actions">
+            <button class="cv-link" id="modalCta" type="button"></button>
+            <button class="mini-btn" id="modalClose" type="button"></button>
+        </div>
+    </dialog>
+
+    <div id="doodleBank" hidden><div data-doodle="cnc"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <path class="f"
                                 d="M158.0 84.5 L177.0 87.8 L177.0 112.2 L158.0 115.5 L152.0 130.0 L163.1 145.8 L145.8 163.1 L130.0 152.0 L115.5 158.0 L112.2 177.0 L87.8 177.0 L84.5 158.0 L70.0 152.0 L54.2 163.1 L36.9 145.8 L48.0 130.0 L42.0 115.5 L23.0 112.2 L23.0 87.8 L42.0 84.5 L48.0 70.0 L36.9 54.2 L54.2 36.9 L70.0 48.0 L84.5 42.0 L87.8 23.0 L112.2 23.0 L115.5 42.0 L130.0 48.0 L145.8 36.9 L163.1 54.2 L152.0 70.0 Z" />
@@ -1165,26 +1547,7 @@
                                 <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
                             </g>
                             <path d="M90 122 Q100 130 110 122" />
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="3-axis CNC system">Sistema CNC de 3 ejes</h3>
-                    <p class="muted"
-                        data-en="CNC milling machine concept for prototyping, with NEMA 17 motors, Arduino, GRBL and A4988 drivers.">
-                        Concepto de fresadora CNC para prototipado, con motores NEMA 17, Arduino, GRBL y drivers A4988.
-                    </p>
-                    <div class="tag-list"><span class="tag">Arduino</span><span class="tag">GRBL</span><span
-                            class="tag">C/C++</span><span class="tag" data-en="Mechatronics">Mecatrónica</span></div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('cnc')"
-                            data-en="View technical sheet">Ver ficha técnica</button><a class="mini-btn"
-                            href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                            data-en="Code on GitHub ↗">Código en GitHub ↗</a></div>
-                </article>
-
-                <article class="project-card" data-category="software java">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+                        </svg></div><div data-doodle="java"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <path d="M140 88 Q178 84 172 118 Q166 144 134 140" />
                             <path class="f" d="M38 72 L42 130 Q44 162 78 162 L102 162 Q136 162 138 130 L142 72" />
@@ -1202,26 +1565,7 @@
                                 <circle class="k pupil" cx="2" cy="3" r="6.5" />
                                 <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
                             </g>
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="Java applications">Aplicaciones Java</h3>
-                    <p class="muted"
-                        data-en="Object-oriented practices and applications, data structures, modularity and desktop interfaces.">
-                        Prácticas y aplicaciones orientadas a objetos, estructuras de datos, modularidad e interfaces de
-                        escritorio.</p>
-                    <div class="tag-list"><span class="tag">Java</span><span class="tag">POO</span><span
-                            class="tag">NetBeans</span></div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('java')"
-                            data-en="View technical sheet">Ver ficha técnica</button><a class="mini-btn"
-                            href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                            data-en="Repositories ↗">Repositorios ↗</a></div>
-                </article>
-
-                <article class="project-card" data-category="mecatronica arduino">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+                        </svg></div><div data-doodle="robotica"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <path d="M100 28 L100 48" />
                             <circle class="k" cx="100" cy="24" r="7" />
@@ -1241,27 +1585,7 @@
                             </g>
                             <path d="M80 122 L120 122 M88 116 L88 128 M100 116 L100 128 M112 116 L112 128"
                                 stroke-width="4" />
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="Robotics with Arduino">Robótica con Arduino</h3>
-                    <p class="muted"
-                        data-en="Academic prototypes with sensors, motor control, obstacle detection and navigation logic.">
-                        Prototipos académicos con sensores, control de motores, detección de obstáculos y lógica de
-                        navegación.</p>
-                    <div class="tag-list"><span class="tag">Arduino</span><span class="tag"
-                            data-en="Sensors">Sensores</span><span class="tag" data-en="Electronics">Electrónica</span>
-                    </div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('robotica')"
-                            data-en="View technical sheet">Ver ficha técnica</button><a class="mini-btn"
-                            href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                            data-en="Repositories ↗">Repositorios ↗</a></div>
-                </article>
-
-                <article class="project-card" data-category="software">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+                        </svg></div><div data-doodle="uml"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <path class="f" d="M38 52 L38 140 Q38 162 100 162 Q162 162 162 140 L162 52" />
                             <path d="M38 78 Q100 98 162 78 M38 128 Q100 148 162 128" />
@@ -1277,26 +1601,7 @@
                                 <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
                             </g>
                             <path d="M91 125 Q100 130 109 125" />
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="Data and systems modeling">Modelado de datos y sistemas</h3>
-                    <p class="muted"
-                        data-en="Analysis exercises, UML diagrams, class design and software requirements documentation.">
-                        Ejercicios de análisis, diagramas UML, diseño de clases y documentación de requisitos de
-                        software.</p>
-                    <div class="tag-list"><span class="tag">UML</span><span class="tag">SQL</span><span class="tag"
-                            data-en="Software Engineering">Ingeniería de Software</span></div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('uml')"
-                            data-en="View technical sheet">Ver ficha técnica</button><a class="mini-btn"
-                            href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                            data-en="Repositories ↗">Repositorios ↗</a></div>
-                </article>
-
-                <article class="project-card" data-category="mecatronica">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+                        </svg></div><div data-doodle="cad"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <path class="f" d="M100 30 L160 64 L160 132 L100 166 L40 132 L40 64 Z" />
                             <path class="sh" d="M100 98 L160 64 L160 132 L100 166 Z" />
@@ -1312,25 +1617,7 @@
                                 <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
                             </g>
                             <path d="M88 142 Q100 150 112 142" />
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="CAD modeling">Modelado CAD</h3>
-                    <p class="muted"
-                        data-en="3D design of parts and assemblies with CAD software, with dimensions defined for manufacturing and integration into mechatronic prototypes.">
-                        Diseño 3D de piezas y ensambles con software CAD, con dimensiones definidas para su fabricación
-                        e integración en prototipos mecatrónicos.</p>
-                    <div class="tag-list"><span class="tag" data-en="CAD design">Diseño CAD</span><span class="tag"
-                            data-en="3D modeling">Modelado 3D</span><span class="tag"
-                            data-en="Mechatronics">Mecatrónica</span></div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('cad')"
-                            data-en="View technical sheet">Ver ficha técnica</button></div>
-                </article>
-
-                <article class="project-card" data-category="mecatronica">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+                        </svg></div><div data-doodle="pcb"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <rect class="f" x="24" y="44" width="152" height="112" rx="14" />
                             <circle cx="42" cy="62" r="5" stroke-width="3.5" />
@@ -1353,25 +1640,7 @@
                                 <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
                             </g>
                             <path d="M92 122 Q100 128 108 122" />
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="PCB design">Creación de PCB's</h3>
-                    <p class="muted"
-                        data-en="Design of printed circuit boards: schematic, component placement and track routing for a manufacturable board.">
-                        Diseño de placas de circuito impreso: esquemático, colocación de componentes y ruteo de pistas
-                        para una placa fabricable.</p>
-                    <div class="tag-list"><span class="tag">PCB</span><span class="tag"
-                            data-en="Electronics">Electrónica</span><span class="tag"
-                            data-en="Schematics">Esquemáticos</span></div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('pcb')"
-                            data-en="View technical sheet">Ver ficha técnica</button></div>
-                </article>
-
-                <article class="project-card" data-category="mecatronica">
-                    <div class="project-doodle"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
+                        </svg></div><div data-doodle="pic"><svg class="doodle" viewBox="0 0 200 200" aria-hidden="true"
                             focusable="false">
                             <path
                                 d="M34 72 L52 72 M148 72 L166 72 M72 34 L72 52 M72 148 L72 166 M34 100 L52 100 M148 100 L166 100 M100 34 L100 52 M100 148 L100 166 M34 128 L52 128 M148 128 L166 128 M128 34 L128 52 M128 148 L128 166 " />
@@ -1388,287 +1657,70 @@
                                 <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
                             </g>
                             <path d="M92 124 Q100 130 108 124" />
-                        </svg></div>
-                    <div class="project-image-placeholder" role="img"
-                        aria-label="Espacio reservado para imagen del proyecto"
-                        data-en-aria-label="Placeholder for project image"><span data-en="PROJECT IMAGE">IMAGEN DEL
-                            PROYECTO</span></div>
-                    <h3 data-en="Embedded systems control with PIC">Control de sistemas embebidos con PIC</h3>
-                    <p class="muted"
-                        data-en="Programming of PIC microcontrollers to control embedded systems: sensor reading, inputs and outputs, and actuator control.">
-                        Programación de microcontroladores PIC para controlar sistemas embebidos: lectura de sensores,
-                        entradas y salidas, y control de actuadores.</p>
-                    <div class="tag-list"><span class="tag">PIC</span><span class="tag">C</span><span class="tag"
-                            data-en="Embedded systems">Sistemas embebidos</span></div>
-                    <div class="project-footer"><button class="mini-btn" onclick="showProject('pic')"
-                            data-en="View technical sheet">Ver ficha técnica</button><a class="mini-btn"
-                            href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                            data-en="Repositories ↗">Repositorios ↗</a></div>
-                </article>
-            </div>
-
-            <div class="module-card" id="projectDetail" aria-live="polite" hidden style="margin-top:22px"></div>
-
-            <h2 class="section-heading" data-en="Public GitHub activity">Actividad pública de GitHub</h2>
-            <div class="module-card">
-                <h3 data-en="snullsh19 · Repositories and languages">snullsh19 · Repositorios y lenguajes</h3>
-                <p class="muted"
-                    data-en="Statistics are fetched from GitHub; they may take time to load or not appear if the external service is rate-limited.">
-                    Las estadísticas se consultan desde GitHub; pueden tardar en cargar o no mostrarse si el servicio
-                    externo está limitado.</p>
-                <div class="stats-grid">
-                    <div class="stat-box"><strong>GitHub</strong><span data-en="Public profile">Perfil público</span>
-                    </div>
-                    <div class="stat-box"><strong>Repos</strong><span data-en="Explore projects">Explorar
-                            proyectos</span></div>
-                    <div class="stat-box"><strong>Code</strong><span data-en="Languages and activity">Lenguajes y
-                            actividad</span></div>
-                </div>
-                <div class="module-grid">
-                    <img id="ghStats" alt="Estadísticas públicas de GitHub" data-en-alt="Public GitHub statistics"
-                        loading="lazy"
-                        src="https://github-readme-stats.vercel.app/api?username=snullsh19&show_icons=true&hide_border=true&theme=default"
-                        style="width:100%;max-width:100%" />
-                    <img id="ghLangs" alt="Lenguajes más usados en GitHub" data-en-alt="Most used languages on GitHub"
-                        loading="lazy"
-                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=snullsh19&layout=compact&hide_border=true&theme=default"
-                        style="width:100%;max-width:100%" />
-                </div>
-                <a class="cv-link" href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank"
-                    data-en="Explore GitHub ↗">Explorar GitHub ↗</a>
-            </div>
-
-            <a class="cv-link" data-en="VIEW PROFESSIONAL CV (1 PAGE)"
-                href="https://drive.google.com/file/d/1K-tjVmKq2zcGeQswU8ZvAeM1GLRkO08m/edit" target="_blank">VER CV
-                PROFESIONAL (1 HOJA)</a>
-        </section>
-
-        <!-- ================= CONTACTOS ================= -->
-        <section class="tab-content" id="contactos">
-            <button class="back-btn" data-en="← BACK TO HOME" onclick="openTab('inicio')">← REGRESAR AL INICIO</button>
-            <div class="status-pill"><span class="status-dot"></span><span
-                    data-en="Available for academic collaborations and software / hardware projects">Disponible para
-                    colaboraciones académicas y proyectos de software / hardware</span></div>
-            <div class="contact-grid">
-                <div>
-                    <div class="page-head">
-                        <h1 class="hero-subtitle" data-en="CONTACT" style="font-size:2.5rem">CONTACTO</h1>
-                        <svg class="doodle" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-                            <path d="M78 172 Q40 190 14 170" />
-                            <g transform="rotate(18 100 100)">
-                                <rect class="f" x="78" y="30" width="44" height="100" />
-                                <rect class="f" x="78" y="14" width="44" height="18" rx="5" />
-                                <path class="f" d="M78 130 L122 130 L100 176 Z" />
-                                <path class="k" d="M91 154 L109 154 L100 176 Z" />
-                                <g transform="translate(90 82) scale(0.72)">
-                                    <ellipse class="f" rx="11" ry="13" stroke-width="4.5" />
-                                    <circle class="k pupil" cx="2" cy="3" r="6.5" />
-                                    <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
-                                </g>
-                                <g transform="translate(110 82) scale(0.72)">
-                                    <ellipse class="f" rx="11" ry="13" stroke-width="4.5" />
-                                    <circle class="k pupil" cx="2" cy="3" r="6.5" />
-                                    <path d="M-12 -5 Q0 -14 12 -5" stroke-width="4.5" />
-                                </g>
-                                <path d="M95 106 Q100 110 105 106" stroke-width="4" />
-                            </g>
-                        </svg>
-                    </div>
-                    <p style="font-size:1.1rem;margin:12px 0"><strong data-en="INSTITUTION:">INSTITUCIÓN:</strong>
-                        Centro Universitario UAEM Tianguistenco</p>
-                    <p style="font-size:1.1rem;margin:12px 0"><strong data-en="EMAIL:">CORREO:</strong> <a
-                            href="mailto:School.emilioblas@gmail.com"
-                            style="color:var(--text-color);font-weight:bold">School.emilioblas@gmail.com</a></p>
-                    <div class="social-actions">
-                        <a class="cv-link" href="https://github.com/snullsh19" rel="noopener noreferrer"
-                            style="margin-top:0" target="_blank">GitHub ↗</a>
-                        <a class="cv-link" href="https://www.linkedin.com/in/shuhasnulls21" rel="noopener noreferrer"
-                            style="margin-top:0" target="_blank">LinkedIn ↗</a>
-                        <button class="mini-btn" onclick="copyEmail()" data-en="Copy email">Copiar correo</button>
-                    </div>
-                    <p aria-live="polite" class="muted" id="copyFeedback"></p>
-                    <div class="qr-box">
-                        <h3 data-en="Save contact">Guardar contacto</h3>
-                        <p class="muted" data-en="Scan the code to save my name and email to your contacts.">Escanea el
-                            código para guardar mi nombre y correo en tus contactos.</p>
-                        <img alt="Código QR con el nombre y correo de Shuha Emilio Blas Santos"
-                            data-en-alt="QR code with the name and email of Shuha Emilio Blas Santos" loading="lazy"
-                            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ABlas%20Santos%3BShuha%20Emilio%3B%3B%3B%0AFN%3AShuha%20Emilio%20Blas%20Santos%0AEMAIL%3ASchool.emilioblas%40gmail.com%0AEND%3AVCARD" />
-                        <p><strong>Shuha Emilio Blas Santos</strong><br />School.emilioblas@gmail.com</p>
-                        <p style="margin-top:8px"><a href="mailto:School.emilioblas@gmail.com"
-                                data-en="Send email">Enviar correo</a></p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 class="section-heading" data-en="Write to me">Escríbeme</h2>
-                    <p class="muted" data-en="Leave me a message and I will reply by email.">Déjame un mensaje y te
-                        responderé por correo.</p>
-                    <form class="module-card" onsubmit="submitContact(event)">
-                        <div class="form-field"><label for="contactName" data-en="Full name *">Nombre completo
-                                *</label><input autocomplete="name" id="contactName" name="name"
-                                placeholder="Tu nombre o empresa" data-en-placeholder="Your name or company" required />
-                        </div>
-                        <div class="form-field"><label for="contactEmail" data-en="Email address *">Correo electrónico
-                                *</label><input autocomplete="email" id="contactEmail" name="email"
-                                placeholder="correo@ejemplo.com" data-en-placeholder="email@example.com" required
-                                type="email" /></div>
-                        <div class="form-field"><label for="contactSubject" data-en="Contact type *">Tipo de contacto
-                                *</label><select id="contactSubject" name="subject" required>
-                                <option value="" data-en="Select an option">Selecciona una opción</option>
-                                <option data-en="Academic collaboration">Colaboración académica</option>
-                                <option data-en="Software development">Desarrollo de software</option>
-                                <option data-en="Mechatronics / embedded systems">Mecatrónica / sistemas embebidos
-                                </option>
-                                <option data-en="Professional internship">Residencias profesionales</option>
-                                <option data-en="Other">Otro</option>
-                            </select></div>
-                        <div class="form-field"><label for="contactMessage" data-en="Message *">Mensaje
-                                *</label><textarea id="contactMessage" name="message"
-                                placeholder="Cuéntame brevemente tu propuesta"
-                                data-en-placeholder="Briefly tell me about your proposal" required></textarea></div>
-                        <button class="cv-link" type="submit" data-en="Prepare email">Preparar correo</button>
-                        <p class="muted"
-                            data-en="Privacy notice: the data entered is used only to prepare the contact message. It is not stored on this site.">
-                            Aviso de privacidad: los datos introducidos se usan únicamente para preparar el mensaje de
-                            contacto. No se almacenan en este sitio.</p>
-                    </form>
-
-                    <h2 class="section-heading" data-en="Project request">Solicitud de proyecto</h2>
-                    <form class="module-card" onsubmit="submitProjectRequest(event)">
-                        <div class="form-field"><label for="serviceType" data-en="Project type">Tipo de
-                                proyecto</label><select id="serviceType">
-                                <option data-en="Software development">Desarrollo de software</option>
-                                <option data-en="Database">Base de datos</option>
-                                <option data-en="Automation / Arduino">Automatización / Arduino</option>
-                                <option data-en="CNC design or prototype">Diseño o prototipo CNC</option>
-                                <option data-en="Academic advising">Asesoría académica</option>
-                            </select></div>
-                        <div class="form-field"><label for="serviceDeadline" data-en="Tentative deadline">Plazo
-                                tentativo</label><select id="serviceDeadline">
-                                <option data-en="1–2 weeks">1–2 semanas</option>
-                                <option data-en="3–4 weeks">3–4 semanas</option>
-                                <option data-en="More than a month">Más de un mes</option>
-                                <option data-en="To be defined">Por definir</option>
-                            </select></div>
-                        <div class="form-field"><label for="serviceBudget"
-                                data-en="Estimated budget (optional)">Presupuesto estimado (opcional)</label><input
-                                id="serviceBudget" placeholder="Rango estimado" data-en-placeholder="Estimated range" />
-                        </div>
-                        <div class="form-field"><label for="serviceDetails"
-                                data-en="Description / requirements">Descripción / requisitos</label><textarea
-                                id="serviceDetails" placeholder="Describe el objetivo y los requisitos iniciales"
-                                data-en-placeholder="Describe the goal and initial requirements"></textarea></div>
-                        <button class="cv-link" type="submit" data-en="Request collaboration">Solicitar
-                            colaboración</button>
-                    </form>
-                </div>
-            </div>
-
-            <h2 class="section-heading" data-en="Institutional location">Ubicación institucional</h2>
-            <p class="muted" style="margin-bottom:14px"
-                data-en="Centro Universitario UAEM Tianguistenco · Check the location on Google Maps.">Centro
-                Universitario UAEM Tianguistenco · Consulta la ubicación en Google Maps.</p>
-            <iframe class="map-frame" loading="lazy"
-                src="https://maps.google.com/maps?q=Centro%20Universitario%20UAEM%20Tianguistenco&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                title="Mapa del Centro Universitario UAEM Tianguistenco"
-                data-en-title="Map of Centro Universitario UAEM Tianguistenco"></iframe>
-        </section>
-    </main>
+                        </svg></div></div>
 
     <footer class="site-footer">
-        <span>© <span id="yearNow">2026</span> E.BLAS™ · <span data-en="Professional portfolio">Portafolio
-                profesional</span></span>
+        <span>© <span id="yearNow">2026</span> E.BLAS™ · <span data-en="Professional portfolio">Portafolio profesional</span> ·
+            <span class="credit" data-en="Project images: Wikimedia Commons">Imágenes de proyectos: Wikimedia Commons</span></span>
         <span><a href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank">GitHub</a> · <a
                 href="https://www.linkedin.com/in/shuhasnulls21" rel="noopener noreferrer" target="_blank">LinkedIn</a>
-            · <a href="mailto:School.emilioblas@gmail.com" data-en="Email">Correo</a></span>
+            · <a data-en="Email" href="mailto:School.emilioblas@gmail.com">Correo</a></span>
     </footer>
 
     <script>
         const EMAIL = 'School.emilioblas@gmail.com';
+        const I18N = {"Home": {"pt": "Início", "de": "Start", "ru": "Главная"}, "About Me": {"pt": "Sobre Mim", "de": "Über mich", "ru": "Обо мне"}, "Projects": {"pt": "Projetos", "de": "Projekte", "ru": "Проекты"}, "Contact": {"pt": "Contato", "de": "Kontakt", "ru": "Контакты"}, "Professional profiles": {"pt": "Perfis profissionais", "de": "Berufsprofile", "ru": "Профессиональные профили"}, "Open Emilio Blas' GitHub": {"pt": "Abrir o GitHub de Emilio Blas", "de": "GitHub von Emilio Blas öffnen", "ru": "Открыть GitHub Эмилио Бласа"}, "Open Emilio Blas' LinkedIn": {"pt": "Abrir o LinkedIn de Emilio Blas", "de": "LinkedIn von Emilio Blas öffnen", "ru": "Открыть LinkedIn Эмилио Бласа"}, "Language": {"pt": "Idioma", "de": "Sprache", "ru": "Язык"}, "Switch between light and dark mode": {"pt": "Alternar entre modo claro e escuro", "de": "Zwischen hellem und dunklem Modus wechseln", "ru": "Переключить светлую и тёмную тему"}, "I AM EMILIO BLAS": {"pt": "EU SOU EMILIO BLAS", "de": "ICH BIN EMILIO BLAS", "ru": "Я — ЭМИЛИО БЛАС"}, "Mechatronics technician and software engineer. I turn manual processes into reliable systems that save your company time and reduce errors.": {"pt": "Técnico em mecatrônica e engenheiro de software. Transformo processos manuais em sistemas confiáveis que economizam tempo e reduzem erros na sua empresa.", "de": "Mechatronik-Techniker und Software-Ingenieur. Ich verwandle manuelle Prozesse in zuverlässige Systeme, die Ihrem Unternehmen Zeit sparen und Fehler reduzieren.", "ru": "Техник-мехатроник и инженер-программист. Превращаю ручные процессы в надёжные системы, которые экономят время вашей компании и снижают количество ошибок."}, "Request a proposal": {"pt": "Solicitar uma proposta", "de": "Angebot anfragen", "ru": "Запросить предложение"}, "See projects ↓": {"pt": "Ver projetos ↓", "de": "Projekte ansehen ↓", "ru": "Смотреть проекты ↓"}, "Photo of Emilio Blas": {"pt": "Foto de Emilio Blas", "de": "Foto von Emilio Blas", "ru": "Фото Эмилио Бласа"}, "Fewer manual tasks. More results.": {"pt": "Menos tarefas manuais. Mais resultados.", "de": "Weniger manuelle Arbeit. Mehr Ergebnisse.", "ru": "Меньше ручной работы. Больше результатов."}, "Mechatronics technician · Software engineer": {"pt": "Técnico em mecatrônica · Engenheiro de software", "de": "Mechatronik-Techniker · Software-Ingenieur", "ru": "Техник-мехатроник · Инженер-программист"}, "What I can do for your company": {"pt": "O que posso fazer pela sua empresa", "de": "Was ich für Ihr Unternehmen tun kann", "ru": "Что я могу сделать для вашей компании"}, "Custom software": {"pt": "Software sob medida", "de": "Maßgeschneiderte Software", "ru": "Программы под ваши задачи"}, "Applications and databases that organize your operations and prevent data-entry errors. Java, Python and SQL.": {"pt": "Aplicações e bancos de dados que organizam sua operação e evitam erros de digitação. Java, Python e SQL.", "de": "Anwendungen und Datenbanken, die Ihre Abläufe ordnen und Eingabefehler vermeiden. Java, Python und SQL.", "ru": "Приложения и базы данных, которые упорядочивают ваши процессы и исключают ошибки ввода. Java, Python и SQL."}, "Automation and electronics": {"pt": "Automação e eletrônica", "de": "Automatisierung und Elektronik", "ru": "Автоматизация и электроника"}, "Arduino and PIC systems that automate repetitive tasks and cut operating time.": {"pt": "Sistemas com Arduino e PIC que automatizam tarefas repetitivas e reduzem o tempo de operação.", "de": "Arduino- und PIC-Systeme, die wiederkehrende Aufgaben automatisieren und Betriebszeiten verkürzen.", "ru": "Системы на Arduino и PIC, которые автоматизируют повторяющиеся задачи и сокращают время работы."}, "Prototyping and design": {"pt": "Prototipagem e design", "de": "Prototyping und Design", "ru": "Прототипирование и дизайн"}, "CAD, PCB and CNC prototypes to validate your idea before investing in production.": {"pt": "Design CAD, PCB e protótipos CNC para validar sua ideia antes de investir na produção.", "de": "CAD-, PCB- und CNC-Prototypen, um Ihre Idee zu prüfen, bevor Sie in die Produktion investieren.", "ru": "CAD, печатные платы и CNC-прототипы, чтобы проверить идею до вложений в производство."}, "How we work together": {"pt": "Como trabalhamos juntos", "de": "So arbeiten wir zusammen", "ru": "Как мы работаем вместе"}, "You tell me the problem": {"pt": "Você me conta o problema", "de": "Sie schildern das Problem", "ru": "Вы рассказываете о задаче"}, "A call or an email to understand what you need.": {"pt": "Uma ligação ou e-mail para entender o que você precisa.", "de": "Ein Anruf oder eine E-Mail, um Ihren Bedarf zu verstehen.", "ru": "Звонок или письмо, чтобы понять, что вам нужно."}, "You get a clear proposal": {"pt": "Você recebe uma proposta clara", "de": "Sie erhalten ein klares Angebot", "ru": "Вы получаете чёткое предложение"}, "Scope, timeline and deliverables defined before we start.": {"pt": "Escopo, prazo e entregáveis definidos antes de começar.", "de": "Umfang, Zeitplan und Ergebnisse sind vor dem Start festgelegt.", "ru": "Объём, сроки и результаты согласованы до начала работы."}, "I deliver and document": {"pt": "Eu entrego e documento", "de": "Ich liefere und dokumentiere", "ru": "Я сдаю работу и документирую"}, "A tested, documented solution ready to use.": {"pt": "Solução testada, documentada e pronta para usar.", "de": "Getestete, dokumentierte Lösung, sofort einsatzbereit.", "ru": "Проверенное и задокументированное решение, готовое к использованию."}, "Have a process you want to improve?": {"pt": "Tem um processo que quer melhorar?", "de": "Gibt es einen Prozess, den Sie verbessern möchten?", "ru": "Есть процесс, который хотите улучшить?"}, "Let's talk about your project": {"pt": "Vamos falar do seu projeto", "de": "Lassen Sie uns über Ihr Projekt sprechen", "ru": "Давайте обсудим ваш проект"}, "Conflict resolution": {"pt": "Resolução de conflitos", "de": "Konfliktlösung", "ru": "Разрешение конфликтов"}, "I look for agreements that keep the team moving forward.": {"pt": "Busco acordos que mantenham a equipe avançando.", "de": "Ich suche Lösungen, mit denen das Team vorankommt.", "ru": "Ищу договорённости, которые не дают команде останавливаться."}, "Team management": {"pt": "Gestão de equipes", "de": "Teammanagement", "ru": "Управление командами"}, "I organize tasks, priorities and owners to meet deadlines.": {"pt": "Organizo tarefas, prioridades e responsáveis para cumprir prazos.", "de": "Ich organisiere Aufgaben, Prioritäten und Verantwortliche, um Termine einzuhalten.", "ru": "Распределяю задачи, приоритеты и ответственных, чтобы выдерживать сроки."}, "Clear communication": {"pt": "Comunicação clara", "de": "Klare Kommunikation", "ru": "Чёткая коммуникация"}, "I explain technical topics in language managers and clients understand.": {"pt": "Explico temas técnicos em uma linguagem que gestores e clientes entendem.", "de": "Ich erkläre technische Themen so, dass Führungskräfte und Kunden sie verstehen.", "ru": "Объясняю технические вопросы языком, понятным руководителям и клиентам."}, "Leadership": {"pt": "Liderança", "de": "Führung", "ru": "Лидерство"}, "I guide the team by example and with clear goals.": {"pt": "Guio a equipe pelo exemplo e com objetivos claros.", "de": "Ich führe das Team mit gutem Beispiel und klaren Zielen.", "ru": "Веду команду личным примером и чёткими целями."}, "Analytical thinking": {"pt": "Pensamento analítico", "de": "Analytisches Denken", "ru": "Аналитическое мышление"}, "I break complex problems into concrete steps.": {"pt": "Divido problemas complexos em etapas concretas.", "de": "Ich zerlege komplexe Probleme in konkrete Schritte.", "ru": "Разбиваю сложные задачи на конкретные шаги."}, "Adaptability": {"pt": "Adaptabilidade", "de": "Anpassungsfähigkeit", "ru": "Адаптивность"}, "I adapt quickly to new tools and changing priorities.": {"pt": "Adapto-me rápido a novas ferramentas e mudanças de prioridade.", "de": "Ich stelle mich schnell auf neue Werkzeuge und wechselnde Prioritäten ein.", "ru": "Быстро осваиваю новые инструменты и меняющиеся приоритеты."}, "Time management": {"pt": "Gestão do tempo", "de": "Zeitmanagement", "ru": "Управление временем"}, "I plan realistic deadlines and follow up consistently.": {"pt": "Planejo prazos realistas e faço acompanhamento constante.", "de": "Ich plane realistische Fristen und verfolge sie konsequent.", "ru": "Планирую реалистичные сроки и постоянно слежу за выполнением."}, "Teamwork": {"pt": "Trabalho em equipe", "de": "Teamarbeit", "ru": "Командная работа"}, "I collaborate across technical and business areas.": {"pt": "Colaboro entre áreas técnicas e de negócios.", "de": "Ich arbeite bereichsübergreifend zwischen Technik und Business.", "ru": "Работаю на стыке технических и бизнес-подразделений."}, "← BACK TO HOME": {"pt": "← VOLTAR AO INÍCIO", "de": "← ZURÜCK ZUR STARTSEITE", "ru": "← НА ГЛАВНУЮ"}, "ABOUT ME": {"pt": "SOBRE MIM", "de": "ÜBER MICH", "ru": "ОБО МНЕ"}, "Professional profile": {"pt": "Perfil profissional", "de": "Berufsprofil", "ru": "Профессиональный профиль"}, "I am a mechatronics technician and software engineer. I combine programming, electronics and automation to deliver functional, documented and easy-to-maintain solutions.": {"pt": "Sou técnico em mecatrônica e engenheiro de software. Combino programação, eletrônica e automação para entregar soluções funcionais, documentadas e fáceis de manter.", "de": "Ich bin Mechatronik-Techniker und Software-Ingenieur. Ich verbinde Programmierung, Elektronik und Automatisierung, um funktionale, dokumentierte und wartungsfreundliche Lösungen zu liefern.", "ru": "Я техник-мехатроник и инженер-программист. Сочетаю программирование, электронику и автоматизацию, чтобы создавать рабочие, документированные и простые в сопровождении решения."}, "Areas of expertise": {"pt": "Áreas de especialização", "de": "Fachgebiete", "ru": "Области специализации"}, "Java / OOP": {"pt": "Java / POO", "de": "Java / OOP", "ru": "Java / ООП"}, "CAD design": {"pt": "Design CAD", "de": "CAD-Design", "ru": "CAD-проектирование"}, "Focus: clean code, technical documentation, continuous learning and teamwork.": {"pt": "Foco: código limpo, documentação técnica, aprendizado contínuo e trabalho em equipe.", "de": "Fokus: sauberer Code, technische Dokumentation, kontinuierliches Lernen und Teamarbeit.", "ru": "Фокус: чистый код, техническая документация, постоянное обучение и командная работа."}, "Technical skills": {"pt": "Habilidades técnicas", "de": "Technische Fähigkeiten", "ru": "Технические навыки"}, "Java, Python, SQL, OOP, desktop interfaces and data modeling.": {"pt": "Java, Python, SQL, POO, interfaces desktop e modelagem de dados.", "de": "Java, Python, SQL, OOP, Desktop-Oberflächen und Datenmodellierung.", "ru": "Java, Python, SQL, ООП, настольные интерфейсы и моделирование данных."}, "Arduino, sensors, drivers, stepper motors, prototypes and embedded systems.": {"pt": "Arduino, sensores, drivers, motores de passo, protótipos e sistemas embarcados.", "de": "Arduino, Sensoren, Treiber, Schrittmotoren, Prototypen und eingebettete Systeme.", "ru": "Arduino, датчики, драйверы, шаговые двигатели, прототипы и встраиваемые системы."}, "Soft skills": {"pt": "Habilidades interpessoais", "de": "Soziale Kompetenzen", "ru": "Гибкие навыки"}, "What I bring to the team beyond the technical.": {"pt": "O que levo para a equipe além do lado técnico.", "de": "Was ich über das Technische hinaus ins Team einbringe.", "ru": "Что я приношу команде помимо технических знаний."}, "Education and background": {"pt": "Formação e trajetória", "de": "Ausbildung und Werdegang", "ru": "Образование и опыт"}, "Mechatronics technician": {"pt": "Técnico em mecatrônica", "de": "Mechatronik-Techniker", "ru": "Техник-мехатроник"}, "Solid foundation in electronics, automation and prototyping.": {"pt": "Base sólida em eletrônica, automação e prototipagem.", "de": "Solide Grundlage in Elektronik, Automatisierung und Prototyping.", "ru": "Прочная база в электронике, автоматизации и прототипировании."}, "Software engineer": {"pt": "Engenheiro de software", "de": "Software-Ingenieur", "ru": "Инженер-программист"}, "Development with Java, Python and databases, integrated with embedded systems.": {"pt": "Desenvolvimento com Java, Python e bancos de dados, integrado a sistemas embarcados.", "de": "Entwicklung mit Java, Python und Datenbanken, integriert mit eingebetteten Systemen.", "ru": "Разработка на Java и Python, работа с базами данных и интеграция со встраиваемыми системами."}, "Languages": {"pt": "Idiomas", "de": "Sprachen", "ru": "Языки"}, "Technical English: reading programming documentation and resources.": {"pt": "Inglês técnico: leitura de documentação e recursos de programação.", "de": "Technisches Englisch: Lesen von Programmierdokumentation und Fachquellen.", "ru": "Технический английский: чтение документации и материалов по программированию."}, "Work philosophy": {"pt": "Filosofia de trabalho", "de": "Arbeitsphilosophie", "ru": "Принципы работы"}, "Iterative development, clear documentation, Git version control and attention to software quality and hardware/software integration.": {"pt": "Desenvolvimento iterativo, documentação clara, controle de versão com Git e atenção à qualidade do software e à integração hardware/software.", "de": "Iterative Entwicklung, klare Dokumentation, Versionskontrolle mit Git und Fokus auf Softwarequalität sowie Hardware-/Software-Integration.", "ru": "Итеративная разработка, понятная документация, контроль версий в Git и внимание к качеству ПО и интеграции аппаратной и программной частей."}, "Shall we talk about your project?": {"pt": "Vamos conversar sobre o seu projeto?", "de": "Sprechen wir über Ihr Projekt?", "ru": "Обсудим ваш проект?"}, "MY PROJECTS": {"pt": "MEUS PROJETOS", "de": "MEINE PROJEKTE", "ru": "МОИ ПРОЕКТЫ"}, "Examples of the kind of solutions I can build for your company. Filter by area or technology.": {"pt": "Exemplos do tipo de soluções que posso construir para sua empresa. Filtre por área ou tecnologia.", "de": "Beispiele für Lösungen, die ich für Ihr Unternehmen entwickeln kann. Nach Bereich oder Technologie filtern.", "ru": "Примеры решений, которые я могу создать для вашей компании. Фильтруйте по направлению или технологии."}, "Filter projects": {"pt": "Filtrar projetos", "de": "Projekte filtern", "ru": "Фильтр проектов"}, "All": {"pt": "Todos", "de": "Alle", "ru": "Все"}, "Mechatronics": {"pt": "Mecatrônica", "de": "Mechatronik", "ru": "Мехатроника"}, "Does any of this fit what you need?": {"pt": "Algo disso combina com o que você precisa?", "de": "Passt etwas davon zu Ihrem Bedarf?", "ru": "Что-то из этого подходит вам?"}, "Public GitHub activity": {"pt": "Atividade pública no GitHub", "de": "Öffentliche GitHub-Aktivität", "ru": "Публичная активность на GitHub"}, "snullsh19 · Repositories and languages": {"pt": "snullsh19 · Repositórios e linguagens", "de": "snullsh19 · Repositories und Sprachen", "ru": "snullsh19 · Репозитории и языки"}, "Statistics are fetched from GitHub; they may take time to load or not appear if the external service is rate-limited.": {"pt": "As estatísticas são consultadas no GitHub; podem demorar a carregar ou não aparecer se o serviço externo estiver limitado.", "de": "Die Statistiken werden von GitHub abgerufen; sie laden eventuell langsam oder werden nicht angezeigt, wenn der externe Dienst begrenzt ist.", "ru": "Статистика загружается с GitHub; она может грузиться долго или не отображаться, если внешний сервис ограничен."}, "Public profile": {"pt": "Perfil público", "de": "Öffentliches Profil", "ru": "Публичный профиль"}, "Explore projects": {"pt": "Explorar projetos", "de": "Projekte erkunden", "ru": "Смотреть проекты"}, "Languages and activity": {"pt": "Linguagens e atividade", "de": "Sprachen und Aktivität", "ru": "Языки и активность"}, "Public GitHub statistics": {"pt": "Estatísticas públicas do GitHub", "de": "Öffentliche GitHub-Statistiken", "ru": "Публичная статистика GitHub"}, "Most used languages on GitHub": {"pt": "Linguagens mais usadas no GitHub", "de": "Meistgenutzte Sprachen auf GitHub", "ru": "Самые используемые языки на GitHub"}, "Explore GitHub ↗": {"pt": "Explorar o GitHub ↗", "de": "GitHub erkunden ↗", "ru": "Открыть GitHub ↗"}, "VIEW PROFESSIONAL CV (1 PAGE)": {"pt": "VER CV PROFISSIONAL (1 PÁGINA)", "de": "PROFESSIONELLEN LEBENSLAUF ANSEHEN (1 SEITE)", "ru": "СМОТРЕТЬ РЕЗЮМЕ (1 СТРАНИЦА)"}, "Full name *": {"pt": "Nome completo *", "de": "Vollständiger Name *", "ru": "Полное имя *"}, "Your name or company": {"pt": "Seu nome ou empresa", "de": "Ihr Name oder Unternehmen", "ru": "Ваше имя или компания"}, "Email address *": {"pt": "E-mail *", "de": "E-Mail-Adresse *", "ru": "Электронная почта *"}, "email@example.com": {"pt": "email@exemplo.com", "de": "email@beispiel.de", "ru": "email@example.com"}, "Contact type *": {"pt": "Tipo de contato *", "de": "Art der Anfrage *", "ru": "Тип обращения *"}, "Select an option": {"pt": "Selecione uma opção", "de": "Option auswählen", "ru": "Выберите вариант"}, "Get a project quote": {"pt": "Solicitar orçamento de projeto", "de": "Projekt anfragen", "ru": "Запросить расчёт проекта"}, "Software development": {"pt": "Desenvolvimento de software", "de": "Softwareentwicklung", "ru": "Разработка ПО"}, "Mechatronics / embedded systems": {"pt": "Mecatrônica / sistemas embarcados", "de": "Mechatronik / eingebettete Systeme", "ru": "Мехатроника / встраиваемые системы"}, "Collaboration or partnership": {"pt": "Colaboração ou parceria", "de": "Zusammenarbeit oder Partnerschaft", "ru": "Сотрудничество или партнёрство"}, "Other": {"pt": "Outro", "de": "Sonstiges", "ru": "Другое"}, "Message *": {"pt": "Mensagem *", "de": "Nachricht *", "ru": "Сообщение *"}, "Briefly tell me about your proposal": {"pt": "Conte-me brevemente sua proposta", "de": "Beschreiben Sie kurz Ihr Anliegen", "ru": "Кратко расскажите о вашем предложении"}, "Prepare email": {"pt": "Preparar e-mail", "de": "E-Mail vorbereiten", "ru": "Подготовить письмо"}, "Privacy notice: the data entered is used only to prepare the contact message. It is not stored on this site.": {"pt": "Aviso de privacidade: os dados informados são usados apenas para preparar a mensagem de contato. Não são armazenados neste site.", "de": "Datenschutzhinweis: Die eingegebenen Daten werden nur zur Vorbereitung der Kontaktnachricht verwendet. Sie werden auf dieser Seite nicht gespeichert.", "ru": "Уведомление о конфиденциальности: введённые данные используются только для подготовки сообщения. Они не сохраняются на этом сайте."}, "Project type": {"pt": "Tipo de projeto", "de": "Projektart", "ru": "Тип проекта"}, "Database": {"pt": "Banco de dados", "de": "Datenbank", "ru": "База данных"}, "Automation / Arduino": {"pt": "Automação / Arduino", "de": "Automatisierung / Arduino", "ru": "Автоматизация / Arduino"}, "CNC design or prototype": {"pt": "Design ou protótipo CNC", "de": "CNC-Design oder -Prototyp", "ru": "CNC-дизайн или прототип"}, "Technical consulting": {"pt": "Consultoria técnica", "de": "Technische Beratung", "ru": "Техническая консультация"}, "Tentative deadline": {"pt": "Prazo estimado", "de": "Voraussichtlicher Zeitrahmen", "ru": "Предполагаемый срок"}, "1–2 weeks": {"pt": "1–2 semanas", "de": "1–2 Wochen", "ru": "1–2 недели"}, "3–4 weeks": {"pt": "3–4 semanas", "de": "3–4 Wochen", "ru": "3–4 недели"}, "More than a month": {"pt": "Mais de um mês", "de": "Mehr als ein Monat", "ru": "Больше месяца"}, "To be defined": {"pt": "A definir", "de": "Noch offen", "ru": "Уточняется"}, "Estimated budget (optional)": {"pt": "Orçamento estimado (opcional)", "de": "Geschätztes Budget (optional)", "ru": "Ориентировочный бюджет (необязательно)"}, "Estimated range": {"pt": "Faixa estimada", "de": "Geschätzte Spanne", "ru": "Ориентировочный диапазон"}, "Description / requirements": {"pt": "Descrição / requisitos", "de": "Beschreibung / Anforderungen", "ru": "Описание / требования"}, "Describe the goal and initial requirements": {"pt": "Descreva o objetivo e os requisitos iniciais", "de": "Beschreiben Sie das Ziel und die ersten Anforderungen", "ru": "Опишите цель и первоначальные требования"}, "Request quote": {"pt": "Solicitar orçamento", "de": "Angebot anfordern", "ru": "Запросить расчёт"}, "Available for new software and hardware projects": {"pt": "Disponível para novos projetos de software e hardware", "de": "Verfügbar für neue Software- und Hardwareprojekte", "ru": "Открыт для новых проектов в области ПО и оборудования"}, "CONTACT": {"pt": "CONTATO", "de": "KONTAKT", "ru": "КОНТАКТЫ"}, "EMAIL:": {"pt": "E-MAIL:", "de": "E-MAIL:", "ru": "ПОЧТА:"}, "Copy email": {"pt": "Copiar e-mail", "de": "E-Mail kopieren", "ru": "Скопировать почту"}, "Save contact": {"pt": "Salvar contato", "de": "Kontakt speichern", "ru": "Сохранить контакт"}, "Scan the code to save my name and email to your contacts.": {"pt": "Escaneie o código para salvar meu nome e e-mail nos seus contatos.", "de": "Scannen Sie den Code, um meinen Namen und meine E-Mail in Ihren Kontakten zu speichern.", "ru": "Отсканируйте код, чтобы сохранить моё имя и почту в контактах."}, "QR code with the name and email of Shuha Emilio Blas Santos": {"pt": "Código QR com o nome e o e-mail de Shuha Emilio Blas Santos", "de": "QR-Code mit Name und E-Mail von Shuha Emilio Blas Santos", "ru": "QR-код с именем и почтой Шуха Эмилио Бласа Сантоса"}, "Send email": {"pt": "Enviar e-mail", "de": "E-Mail senden", "ru": "Отправить письмо"}, "Write to me": {"pt": "Escreva para mim", "de": "Schreiben Sie mir", "ru": "Напишите мне"}, "Leave me a message and I will reply by email.": {"pt": "Deixe uma mensagem e responderei por e-mail.", "de": "Hinterlassen Sie mir eine Nachricht, ich antworte per E-Mail.", "ru": "Оставьте сообщение, и я отвечу по электронной почте."}, "Request a quote": {"pt": "Solicite um orçamento", "de": "Angebot anfordern", "ru": "Запросить расчёт стоимости"}, "Professional portfolio": {"pt": "Portfólio profissional", "de": "Berufsportfolio", "ru": "Профессиональное портфолио"}, "Project images: Wikimedia Commons": {"pt": "Imagens dos projetos: Wikimedia Commons", "de": "Projektbilder: Wikimedia Commons", "ru": "Изображения проектов: Wikimedia Commons"}, "Email": {"pt": "E-mail", "de": "E-Mail", "ru": "Почта"}};
+        const PROJECTS = {"cnc": {"cat": "mecatronica arduino", "github": false, "fit": "cover", "img": "DMS_CNC_router_at_SITU_Fabrication_(12480).jpg", "tags": ["Arduino", "GRBL", "C/C++", "NEMA 17", "A4988"], "title": {"es": "Sistema CNC de 3 ejes", "en": "3-axis CNC system", "pt": "Sistema CNC de 3 eixos", "de": "3-Achsen-CNC-System", "ru": "3-осевая система ЧПУ"}, "summary": {"es": "Fresadora CNC compacta para fabricar prototipos y piezas con precisión repetible.", "en": "Compact CNC milling machine to produce prototypes and parts with repeatable precision.", "pt": "Fresadora CNC compacta para fabricar protótipos e peças com precisão repetível.", "de": "Kompakte CNC-Fräse zur Fertigung von Prototypen und Teilen mit wiederholbarer Präzision.", "ru": "Компактный фрезерный станок с ЧПУ для изготовления прототипов и деталей с повторяемой точностью."}, "problem": {"es": "Fabricar prototipos y piezas a mano es lento, costoso y difícil de repetir con la misma calidad. Una CNC compacta permite producir piezas idénticas, bajo demanda y sin depender de terceros.", "en": "Making prototypes and parts by hand is slow, costly and hard to repeat with the same quality. A compact CNC lets you produce identical parts on demand without relying on third parties.", "pt": "Fabricar protótipos e peças manualmente é lento, caro e difícil de repetir com a mesma qualidade. Uma CNC compacta permite produzir peças idênticas, sob demanda e sem depender de terceiros.", "de": "Prototypen und Teile von Hand zu fertigen ist langsam, teuer und schwer in gleichbleibender Qualität zu wiederholen. Eine kompakte CNC-Fräse fertigt identische Teile auf Abruf, ohne von Dritten abhängig zu sein.", "ru": "Изготовление прототипов и деталей вручную — медленно, дорого и трудно повторить с тем же качеством. Компактный станок с ЧПУ позволяет делать одинаковые детали по запросу, не завися от подрядчиков."}, "solution": {"es": "Fresadora CNC de 3 ejes pensada para prototipado. El movimiento se controla con Arduino y GRBL, usando CNC Shield, drivers A4988 y motores a pasos NEMA 17.", "en": "3-axis CNC milling machine designed for prototyping. Motion is controlled with Arduino and GRBL, using a CNC Shield, A4988 drivers and NEMA 17 stepper motors.", "pt": "Fresadora CNC de 3 eixos pensada para prototipagem. O movimento é controlado com Arduino e GRBL, usando CNC Shield, drivers A4988 e motores de passo NEMA 17.", "de": "3-Achsen-CNC-Fräse für das Prototyping. Die Bewegung wird mit Arduino und GRBL gesteuert, mit CNC Shield, A4988-Treibern und NEMA-17-Schrittmotoren.", "ru": "3-осевой фрезерный станок с ЧПУ для прототипирования. Движением управляют Arduino и GRBL, используются CNC Shield, драйверы A4988 и шаговые двигатели NEMA 17."}, "specs": [{"es": "3 ejes de movimiento (X, Y, Z)", "en": "3 motion axes (X, Y, Z)", "pt": "3 eixos de movimento (X, Y, Z)", "de": "3 Bewegungsachsen (X, Y, Z)", "ru": "3 оси движения (X, Y, Z)"}, {"es": "Control: Arduino + firmware GRBL", "en": "Control: Arduino + GRBL firmware", "pt": "Controle: Arduino + firmware GRBL", "de": "Steuerung: Arduino + GRBL-Firmware", "ru": "Управление: Arduino + прошивка GRBL"}, {"es": "Motores a pasos NEMA 17 con drivers A4988", "en": "NEMA 17 stepper motors with A4988 drivers", "pt": "Motores de passo NEMA 17 com drivers A4988", "de": "NEMA-17-Schrittmotoren mit A4988-Treibern", "ru": "Шаговые двигатели NEMA 17 с драйверами A4988"}, {"es": "Placa CNC Shield para integrar el hardware", "en": "CNC Shield board to integrate the hardware", "pt": "Placa CNC Shield para integrar o hardware", "de": "CNC-Shield-Platine zur Hardware-Integration", "ru": "Плата CNC Shield для интеграции оборудования"}]}, "java": {"cat": "software java", "github": true, "fit": "contain", "img": "Duke_(Java_mascot)_waving.svg", "tags": ["Java", "NetBeans"], "title": {"es": "Aplicaciones Java", "en": "Java applications", "pt": "Aplicações Java", "de": "Java-Anwendungen", "ru": "Java-приложения"}, "summary": {"es": "Aplicaciones de escritorio que ordenan la información y validan los datos para evitar errores.", "en": "Desktop applications that organize information and validate data to prevent errors.", "pt": "Aplicações desktop que organizam as informações e validam os dados para evitar erros.", "de": "Desktop-Anwendungen, die Informationen ordnen und Daten validieren, um Fehler zu vermeiden.", "ru": "Настольные приложения, которые упорядочивают информацию и проверяют данные, чтобы избежать ошибок."}, "problem": {"es": "Cuando la información vive en hojas de cálculo o en papel, aparecen errores de captura, duplicados y retrabajo. Una aplicación a la medida centraliza los datos y los valida desde el momento en que se capturan.", "en": "When information lives in spreadsheets or on paper, data-entry errors, duplicates and rework appear. A custom application centralizes data and validates it the moment it is entered.", "pt": "Quando a informação vive em planilhas ou no papel, surgem erros de digitação, duplicidades e retrabalho. Uma aplicação sob medida centraliza os dados e os valida no momento do registro.", "de": "Wenn Informationen in Tabellen oder auf Papier liegen, entstehen Eingabefehler, Duplikate und Nacharbeit. Eine maßgeschneiderte Anwendung bündelt die Daten und prüft sie schon bei der Eingabe.", "ru": "Когда данные хранятся в таблицах или на бумаге, появляются ошибки ввода, дубликаты и переделки. Индивидуальное приложение собирает данные в одном месте и проверяет их при вводе."}, "solution": {"es": "Aplicaciones de escritorio desarrolladas con programación orientada a objetos: clases, métodos, validación de datos y estructuras modulares fáciles de mantener y ampliar.", "en": "Desktop applications built with object-oriented programming: classes, methods, data validation and modular structures that are easy to maintain and extend.", "pt": "Aplicações desktop desenvolvidas com programação orientada a objetos: classes, métodos, validação de dados e estruturas modulares fáceis de manter e ampliar.", "de": "Desktop-Anwendungen mit objektorientierter Programmierung: Klassen, Methoden, Datenvalidierung und modulare Strukturen, die leicht zu warten und zu erweitern sind.", "ru": "Настольные приложения на основе объектно-ориентированного программирования: классы, методы, проверка данных и модульная структура, которую легко поддерживать и расширять."}, "specs": [{"es": "Programación orientada a objetos", "en": "Object-oriented programming", "pt": "Programação orientada a objetos", "de": "Objektorientierte Programmierung", "ru": "Объектно-ориентированное программирование"}, {"es": "Validación de datos de entrada", "en": "Input data validation", "pt": "Validação de dados de entrada", "de": "Validierung der Eingabedaten", "ru": "Проверка вводимых данных"}, {"es": "Diseño modular y estructuras de datos", "en": "Modular design and data structures", "pt": "Design modular e estruturas de dados", "de": "Modularer Aufbau und Datenstrukturen", "ru": "Модульная архитектура и структуры данных"}, {"es": "Interfaces de escritorio", "en": "Desktop interfaces", "pt": "Interfaces desktop", "de": "Desktop-Oberflächen", "ru": "Настольные интерфейсы"}]}, "robotica": {"cat": "mecatronica arduino", "github": false, "fit": "cover", "img": "Arduino_Uno_-_R3.jpg", "tags": ["Arduino", "C/C++"], "title": {"es": "Robótica con Arduino", "en": "Robotics with Arduino", "pt": "Robótica com Arduino", "de": "Robotik mit Arduino", "ru": "Робототехника на Arduino"}, "summary": {"es": "Prototipos con sensores y control de motores que detectan obstáculos y navegan solos.", "en": "Prototypes with sensors and motor control that detect obstacles and navigate on their own.", "pt": "Protótipos com sensores e controle de motores que detectam obstáculos e navegam sozinhos.", "de": "Prototypen mit Sensoren und Motorsteuerung, die Hindernisse erkennen und selbstständig navigieren.", "ru": "Прототипы с датчиками и управлением моторами, которые обнаруживают препятствия и перемещаются самостоятельно."}, "problem": {"es": "Las tareas repetitivas de movimiento y vigilancia consumen horas de personal. Un sistema autónomo detecta su entorno y actúa sin intervención constante.", "en": "Repetitive movement and monitoring tasks consume staff hours. An autonomous system senses its surroundings and acts without constant supervision.", "pt": "Tarefas repetitivas de movimentação e monitoramento consomem horas da equipe. Um sistema autônomo percebe o ambiente e age sem intervenção constante.", "de": "Wiederkehrende Bewegungs- und Überwachungsaufgaben binden Arbeitsstunden. Ein autonomes System erfasst seine Umgebung und handelt ohne ständiges Eingreifen.", "ru": "Повторяющиеся задачи перемещения и контроля отнимают часы работы персонала. Автономная система распознаёт окружение и действует без постоянного вмешательства."}, "solution": {"es": "Prototipos con sensores, control de motores y lógica de navegación para detectar y esquivar obstáculos.", "en": "Prototypes with sensors, motor control and navigation logic to detect and avoid obstacles.", "pt": "Protótipos com sensores, controle de motores e lógica de navegação para detectar e desviar de obstáculos.", "de": "Prototypen mit Sensoren, Motorsteuerung und Navigationslogik zum Erkennen und Umfahren von Hindernissen.", "ru": "Прототипы с датчиками, управлением моторами и логикой навигации для обнаружения и объезда препятствий."}, "specs": [{"es": "Sensores para detección de obstáculos", "en": "Sensors for obstacle detection", "pt": "Sensores para detecção de obstáculos", "de": "Sensoren zur Hinderniserkennung", "ru": "Датчики обнаружения препятствий"}, {"es": "Control de motores", "en": "Motor control", "pt": "Controle de motores", "de": "Motorsteuerung", "ru": "Управление моторами"}, {"es": "Lógica de navegación programada", "en": "Programmed navigation logic", "pt": "Lógica de navegação programada", "de": "Programmierte Navigationslogik", "ru": "Запрограммированная логика навигации"}, {"es": "Microcontrolador Arduino", "en": "Arduino microcontroller", "pt": "Microcontrolador Arduino", "de": "Arduino-Mikrocontroller", "ru": "Микроконтроллер Arduino"}]}, "uml": {"cat": "software", "github": false, "fit": "contain", "img": "UML_Use_Case_diagram.svg", "tags": ["UML", "SQL"], "title": {"es": "Modelado de datos y sistemas", "en": "Data and systems modeling", "pt": "Modelagem de dados e sistemas", "de": "Daten- und Systemmodellierung", "ru": "Моделирование данных и систем"}, "summary": {"es": "Diagramas y requisitos que alinean al equipo y al cliente antes de escribir código.", "en": "Diagrams and requirements that align the team and the client before any code is written.", "pt": "Diagramas e requisitos que alinham a equipe e o cliente antes de escrever código.", "de": "Diagramme und Anforderungen, die Team und Kunde abstimmen, bevor Code entsteht.", "ru": "Диаграммы и требования, которые согласуют команду и клиента до написания кода."}, "problem": {"es": "Muchos proyectos de software fallan porque los requisitos se entienden distinto. Modelar primero evita malentendidos y reduce el costo de corregir después.", "en": "Many software projects fail because requirements are understood differently. Modeling first prevents misunderstandings and lowers the cost of fixing things later.", "pt": "Muitos projetos de software falham porque os requisitos são entendidos de formas diferentes. Modelar primeiro evita mal-entendidos e reduz o custo de corrigir depois.", "de": "Viele Softwareprojekte scheitern, weil Anforderungen unterschiedlich verstanden werden. Erst zu modellieren vermeidet Missverständnisse und senkt die Kosten späterer Korrekturen.", "ru": "Многие программные проекты проваливаются из-за того, что требования понимают по-разному. Моделирование заранее исключает недопонимание и снижает стоимость исправлений."}, "solution": {"es": "Análisis y diseño de sistemas con diagramas UML (casos de uso, clases y actividades) junto con la especificación de requisitos de software.", "en": "Systems analysis and design with UML diagrams (use cases, classes and activities) together with the software requirements specification.", "pt": "Análise e design de sistemas com diagramas UML (casos de uso, classes e atividades) junto com a especificação de requisitos de software.", "de": "Systemanalyse und -entwurf mit UML-Diagrammen (Anwendungsfälle, Klassen und Aktivitäten) sowie der Spezifikation der Softwareanforderungen.", "ru": "Анализ и проектирование систем с помощью UML-диаграмм (варианты использования, классы и активности) и спецификация требований к ПО."}, "specs": [{"es": "Diagramas de casos de uso", "en": "Use case diagrams", "pt": "Diagramas de casos de uso", "de": "Anwendungsfalldiagramme", "ru": "Диаграммы вариантов использования"}, {"es": "Diagramas de clases", "en": "Class diagrams", "pt": "Diagramas de classes", "de": "Klassendiagramme", "ru": "Диаграммы классов"}, {"es": "Diagramas de actividades", "en": "Activity diagrams", "pt": "Diagramas de atividades", "de": "Aktivitätsdiagramme", "ru": "Диаграммы активностей"}, {"es": "Especificación de requisitos de software", "en": "Software requirements specification", "pt": "Especificação de requisitos de software", "de": "Spezifikation der Softwareanforderungen", "ru": "Спецификация требований к ПО"}]}, "cad": {"cat": "mecatronica", "github": false, "fit": "cover", "img": "CAD_computer-aided_design.jpg", "tags": ["CAD", "3D"], "title": {"es": "Modelado CAD", "en": "CAD modeling", "pt": "Modelagem CAD", "de": "CAD-Modellierung", "ru": "CAD-моделирование"}, "summary": {"es": "Piezas y ensambles en 3D listos para fabricar, validados antes de gastar en material.", "en": "3D parts and assemblies ready to manufacture, validated before spending on material.", "pt": "Peças e montagens 3D prontas para fabricar, validadas antes de gastar com material.", "de": "3D-Teile und Baugruppen, fertigungsreif und geprüft, bevor Geld für Material ausgegeben wird.", "ru": "3D-детали и сборки, готовые к производству и проверенные до затрат на материалы."}, "problem": {"es": "Fabricar sin un diseño previo genera piezas que no encajan, desperdicio de material y retrabajo. El modelo 3D permite detectar errores antes de producir.", "en": "Manufacturing without a prior design leads to parts that do not fit, wasted material and rework. A 3D model lets you catch errors before production.", "pt": "Fabricar sem um projeto prévio gera peças que não se encaixam, desperdício de material e retrabalho. O modelo 3D permite detectar erros antes de produzir.", "de": "Fertigung ohne vorherigen Entwurf führt zu Teilen, die nicht passen, zu Materialverschwendung und Nacharbeit. Das 3D-Modell macht Fehler sichtbar, bevor produziert wird.", "ru": "Производство без предварительного проекта приводит к деталям, которые не подходят, перерасходу материала и переделкам. 3D-модель позволяет найти ошибки до начала изготовления."}, "solution": {"es": "Diseño 3D de piezas y ensambles con software CAD, con dimensiones definidas para su fabricación e integración en prototipos mecatrónicos.", "en": "3D design of parts and assemblies with CAD software, with dimensions defined for manufacturing and integration into mechatronic prototypes.", "pt": "Projeto 3D de peças e montagens com software CAD, com dimensões definidas para fabricação e integração em protótipos mecatrônicos.", "de": "3D-Konstruktion von Teilen und Baugruppen mit CAD-Software, mit definierten Maßen für die Fertigung und die Integration in mechatronische Prototypen.", "ru": "3D-проектирование деталей и сборок в CAD с заданными размерами для изготовления и интеграции в мехатронные прототипы."}, "specs": [{"es": "Modelado 3D de piezas", "en": "3D part modeling", "pt": "Modelagem 3D de peças", "de": "3D-Teilemodellierung", "ru": "3D-моделирование деталей"}, {"es": "Ensambles con dimensiones definidas", "en": "Assemblies with defined dimensions", "pt": "Montagens com dimensões definidas", "de": "Baugruppen mit definierten Maßen", "ru": "Сборки с заданными размерами"}, {"es": "Preparado para fabricación (CNC)", "en": "Prepared for manufacturing (CNC)", "pt": "Preparado para fabricação (CNC)", "de": "Fertigungsgerecht aufbereitet (CNC)", "ru": "Подготовлено к изготовлению (ЧПУ)"}, {"es": "Integración con prototipos mecatrónicos", "en": "Integration with mechatronic prototypes", "pt": "Integração com protótipos mecatrônicos", "de": "Integration in mechatronische Prototypen", "ru": "Интеграция в мехатронные прототипы"}]}, "pcb": {"cat": "mecatronica", "github": false, "fit": "cover", "img": "SEG_DVD_430_-_Printed_circuit_board-4276.jpg", "tags": ["PCB"], "title": {"es": "Creación de PCB's", "en": "PCB design", "pt": "Criação de PCBs", "de": "PCB-Entwicklung", "ru": "Разработка печатных плат"}, "summary": {"es": "Placas de circuito impreso compactas y reproducibles, listas para fabricarse.", "en": "Compact, reproducible printed circuit boards ready to be manufactured.", "pt": "Placas de circuito impresso compactas e reproduzíveis, prontas para fabricação.", "de": "Kompakte, reproduzierbare Leiterplatten, bereit zur Fertigung.", "ru": "Компактные воспроизводимые печатные платы, готовые к производству."}, "problem": {"es": "Los circuitos armados con cables sueltos son frágiles y difíciles de replicar. Una PCB entrega un circuito compacto, confiable y fácil de producir en serie.", "en": "Circuits built with loose wires are fragile and hard to replicate. A PCB delivers a compact, reliable circuit that is easy to produce in volume.", "pt": "Circuitos montados com fios soltos são frágeis e difíceis de replicar. Uma PCB entrega um circuito compacto, confiável e fácil de produzir em série.", "de": "Mit losen Kabeln aufgebaute Schaltungen sind fragil und schwer zu vervielfältigen. Eine Leiterplatte liefert eine kompakte, zuverlässige Schaltung, die sich leicht in Serie fertigen lässt.", "ru": "Схемы на отдельных проводах хрупкие и плохо тиражируются. Печатная плата даёт компактную, надёжную схему, которую легко выпускать серийно."}, "solution": {"es": "Diseño de placas de circuito impreso: esquemático, colocación de componentes y ruteo de pistas para una placa fabricable.", "en": "Design of printed circuit boards: schematic, component placement and track routing for a manufacturable board.", "pt": "Projeto de placas de circuito impresso: esquemático, posicionamento de componentes e roteamento de trilhas para uma placa fabricável.", "de": "Entwurf von Leiterplatten: Schaltplan, Bauteilplatzierung und Leiterbahn-Routing für eine fertigbare Platine.", "ru": "Проектирование печатных плат: схема, размещение компонентов и трассировка дорожек для платы, пригодной к производству."}, "specs": [{"es": "Esquemático del circuito", "en": "Circuit schematic", "pt": "Esquemático do circuito", "de": "Schaltplan", "ru": "Принципиальная схема"}, {"es": "Colocación de componentes", "en": "Component placement", "pt": "Posicionamento de componentes", "de": "Bauteilplatzierung", "ru": "Размещение компонентов"}, {"es": "Ruteo de pistas", "en": "Track routing", "pt": "Roteamento de trilhas", "de": "Leiterbahn-Routing", "ru": "Трассировка дорожек"}, {"es": "Placa lista para fabricación", "en": "Board ready for manufacturing", "pt": "Placa pronta para fabricação", "de": "Fertigungsfertige Platine", "ru": "Плата, готовая к производству"}]}, "pic": {"cat": "mecatronica", "github": false, "fit": "cover", "img": "PIC18F8720.jpg", "tags": ["PIC", "C"], "title": {"es": "Control de sistemas embebidos con PIC", "en": "Embedded systems control with PIC", "pt": "Controle de sistemas embarcados com PIC", "de": "Steuerung eingebetteter Systeme mit PIC", "ru": "Управление встраиваемыми системами на PIC"}, "summary": {"es": "Controladores dedicados y económicos que leen sensores y manejan equipos de forma confiable.", "en": "Dedicated, low-cost controllers that read sensors and run equipment reliably.", "pt": "Controladores dedicados e econômicos que leem sensores e operam equipamentos com confiabilidade.", "de": "Dedizierte, kostengünstige Steuerungen, die Sensoren auslesen und Geräte zuverlässig betreiben.", "ru": "Специализированные недорогие контроллеры, которые считывают датчики и надёжно управляют оборудованием."}, "problem": {"es": "Controlar un equipo con una computadora completa es caro y excesivo. Un microcontrolador PIC hace el trabajo con menor costo, menor consumo y alta confiabilidad.", "en": "Controlling equipment with a full computer is expensive and overkill. A PIC microcontroller does the job at lower cost and power, with high reliability.", "pt": "Controlar um equipamento com um computador completo é caro e excessivo. Um microcontrolador PIC faz o trabalho com menor custo e consumo, e alta confiabilidade.", "de": "Geräte mit einem vollständigen Computer zu steuern ist teuer und überdimensioniert. Ein PIC-Mikrocontroller erledigt die Aufgabe günstiger, mit weniger Energie und hoher Zuverlässigkeit.", "ru": "Управлять оборудованием с помощью полноценного компьютера дорого и избыточно. Микроконтроллер PIC решает задачу дешевле, с меньшим энергопотреблением и высокой надёжностью."}, "solution": {"es": "Programación de microcontroladores PIC para controlar sistemas embebidos: lectura de sensores, entradas y salidas, y control de actuadores.", "en": "Programming of PIC microcontrollers to control embedded systems: sensor reading, inputs and outputs, and actuator control.", "pt": "Programação de microcontroladores PIC para controlar sistemas embarcados: leitura de sensores, entradas e saídas e controle de atuadores.", "de": "Programmierung von PIC-Mikrocontrollern zur Steuerung eingebetteter Systeme: Sensorabfrage, Ein- und Ausgänge sowie Ansteuerung von Aktoren.", "ru": "Программирование микроконтроллеров PIC для управления встраиваемыми системами: считывание датчиков, входы и выходы, управление исполнительными устройствами."}, "specs": [{"es": "Microcontroladores PIC", "en": "PIC microcontrollers", "pt": "Microcontroladores PIC", "de": "PIC-Mikrocontroller", "ru": "Микроконтроллеры PIC"}, {"es": "Lectura de sensores", "en": "Sensor reading", "pt": "Leitura de sensores", "de": "Sensorabfrage", "ru": "Считывание датчиков"}, {"es": "Entradas y salidas digitales", "en": "Digital inputs and outputs", "pt": "Entradas e saídas digitais", "de": "Digitale Ein- und Ausgänge", "ru": "Цифровые входы и выходы"}, {"es": "Control de actuadores", "en": "Actuator control", "pt": "Controle de atuadores", "de": "Aktoransteuerung", "ru": "Управление исполнительными устройствами"}]}};
+        const ORDER = ["cnc", "java", "robotica", "uml", "cad", "pcb", "pic"];
+        const UI = {"es": {"close": "Cerrar", "copied": "Correo copiado.", "subjectPrefix": "[Portafolio] ", "reqPrefix": "[Solicitud de cotización] ", "name": "Nombre", "email": "Correo", "message": "Mensaje", "type": "Tipo", "deadline": "Plazo", "budget": "Presupuesto", "desc": "Descripción", "title": "Emilio Blas | Software y Mecatrónica para tu empresa", "meta": "Emilio Blas, técnico en mecatrónica e ingeniero en software. Software a la medida, automatización y prototipado para empresas.", "viewSheet": "Ver ficha técnica", "repos": "Repositorios ↗", "problem": "¿Qué problema resuelve?", "solution": "Cómo lo resuelvo", "specs": "Ficha técnica", "tech": "Tecnologías", "cta": "Quiero algo así →", "imgAlt": "Imagen ilustrativa:"}, "en": {"close": "Close", "copied": "Email copied.", "subjectPrefix": "[Portfolio] ", "reqPrefix": "[Quote request] ", "name": "Name", "email": "Email", "message": "Message", "type": "Type", "deadline": "Deadline", "budget": "Budget", "desc": "Description", "title": "Emilio Blas | Software & Mechatronics for your business", "meta": "Emilio Blas, mechatronics technician and software engineer. Custom software, automation and prototyping for businesses.", "viewSheet": "View technical sheet", "repos": "Repositories ↗", "problem": "What problem does it solve?", "solution": "How I solve it", "specs": "Technical sheet", "tech": "Technologies", "cta": "I want something like this →", "imgAlt": "Illustrative image:"}, "pt": {"close": "Fechar", "copied": "E-mail copiado.", "subjectPrefix": "[Portfólio] ", "reqPrefix": "[Solicitação de orçamento] ", "name": "Nome", "email": "E-mail", "message": "Mensagem", "type": "Tipo", "deadline": "Prazo", "budget": "Orçamento", "desc": "Descrição", "title": "Emilio Blas | Software e Mecatrônica para sua empresa", "meta": "Emilio Blas, técnico em mecatrônica e engenheiro de software. Software sob medida, automação e prototipagem para empresas.", "viewSheet": "Ver ficha técnica", "repos": "Repositórios ↗", "problem": "Que problema resolve?", "solution": "Como eu resolvo", "specs": "Ficha técnica", "tech": "Tecnologias", "cta": "Quero algo assim →", "imgAlt": "Imagem ilustrativa:"}, "de": {"close": "Schließen", "copied": "E-Mail kopiert.", "subjectPrefix": "[Portfolio] ", "reqPrefix": "[Angebotsanfrage] ", "name": "Name", "email": "E-Mail", "message": "Nachricht", "type": "Art", "deadline": "Zeitrahmen", "budget": "Budget", "desc": "Beschreibung", "title": "Emilio Blas | Software & Mechatronik für Ihr Unternehmen", "meta": "Emilio Blas, Mechatronik-Techniker und Software-Ingenieur. Maßgeschneiderte Software, Automatisierung und Prototyping für Unternehmen.", "viewSheet": "Datenblatt ansehen", "repos": "Repositories ↗", "problem": "Welches Problem löst es?", "solution": "Wie ich es löse", "specs": "Technisches Datenblatt", "tech": "Technologien", "cta": "Ich möchte so etwas →", "imgAlt": "Illustratives Bild:"}, "ru": {"close": "Закрыть", "copied": "Почта скопирована.", "subjectPrefix": "[Портфолио] ", "reqPrefix": "[Запрос расчёта] ", "name": "Имя", "email": "Почта", "message": "Сообщение", "type": "Тип", "deadline": "Срок", "budget": "Бюджет", "desc": "Описание", "title": "Эмилио Блас | ПО и мехатроника для вашего бизнеса", "meta": "Эмилио Блас, техник-мехатроник и инженер-программист. Индивидуальное ПО, автоматизация и прототипирование для бизнеса.", "viewSheet": "Открыть тех. карточку", "repos": "Репозитории ↗", "problem": "Какую проблему решает?", "solution": "Как я это решаю", "specs": "Технические характеристики", "tech": "Технологии", "cta": "Хочу что-то подобное →", "imgAlt": "Иллюстрация:"}};
+        const COMMONS = 'https://commons.wikimedia.org/wiki/Special:FilePath/';
+
         let currentLang = 'es';
         let currentProject = null;
+        let currentFilter = 'todos';
         let copied = false;
 
         document.getElementById('yearNow').textContent = new Date().getFullYear();
 
-        /* ---------- Traducciones dinámicas (fichas, mensajes, correo) ---------- */
-        const PROJECTS = {
-            cnc: {
-                es: ['Sistema CNC de 3 ejes', 'Fresadora CNC de 3 ejes pensada para prototipado. El control de movimiento se realiza con Arduino y GRBL, usando CNC Shield, drivers A4988 y motores a pasos NEMA 17.'],
-                en: ['3-axis CNC system', '3-axis CNC milling machine designed for prototyping. Motion control is handled with Arduino and GRBL, using a CNC Shield, A4988 drivers and NEMA 17 stepper motors.']
-            },
-            java: {
-                es: ['Aplicaciones Java', 'Aplicaciones de escritorio desarrolladas con programación orientada a objetos: clases, métodos, validación de datos y estructuras modulares.'],
-                en: ['Java applications', 'Desktop applications built with object-oriented programming: classes, methods, data validation and modular structures.']
-            },
-            robotica: {
-                es: ['Robótica con Arduino', 'Prototipos académicos con sensores, control de motores y lógica de navegación para detectar y esquivar obstáculos.'],
-                en: ['Robotics with Arduino', 'Academic prototypes with sensors, motor control and navigation logic to detect and avoid obstacles.']
-            },
-            uml: {
-                es: ['Modelado de datos y sistemas', 'Análisis y diseño de sistemas mediante diagramas UML, casos de uso, clases y actividades, junto con la especificación de requisitos de software.'],
-                en: ['Data and systems modeling', 'Systems analysis and design using UML diagrams, use cases, classes and activities, along with software requirements specification.']
-            },
-            cad: {
-                es: ['Modelado CAD', 'Diseño 3D de piezas y ensambles con software CAD, con dimensiones definidas para su fabricación e integración en prototipos mecatrónicos.'],
-                en: ['CAD modeling', '3D design of parts and assemblies with CAD software, with dimensions defined for manufacturing and integration into mechatronic prototypes.']
-            },
-            pcb: {
-                es: ['Creación de PCB\'s', 'Diseño de placas de circuito impreso: esquemático, colocación de componentes y ruteo de pistas para una placa fabricable.'],
-                en: ['PCB design', 'Design of printed circuit boards: schematic, component placement and track routing for a manufacturable board.']
-            },
-            pic: {
-                es: ['Control de sistemas embebidos con PIC', 'Programación de microcontroladores PIC para controlar sistemas embebidos: lectura de sensores, entradas y salidas, y control de actuadores.'],
-                en: ['Embedded systems control with PIC', 'Programming of PIC microcontrollers to control embedded systems: sensor reading, inputs and outputs, and actuator control.']
-            }
-        };
-        const UI = {
-            es: {
-                close: 'Cerrar ficha', copied: 'Correo copiado.', subjectPrefix: '[Portafolio] ', reqPrefix: '[Solicitud de proyecto] ',
-                name: 'Nombre', email: 'Correo', message: 'Mensaje', type: 'Tipo', deadline: 'Plazo', budget: 'Presupuesto', desc: 'Descripción',
-                title: 'Emilio Blas | Portafolio de Software y Mecatrónica',
-                meta: 'Portafolio profesional de Shuha Emilio Blas Santos: desarrollo de software, Java, Python, bases de datos, Arduino, CAD, PCB y mecatrónica.'
-            },
-            en: {
-                close: 'Close sheet', copied: 'Email copied.', subjectPrefix: '[Portfolio] ', reqPrefix: '[Project request] ',
-                name: 'Name', email: 'Email', message: 'Message', type: 'Type', deadline: 'Deadline', budget: 'Budget', desc: 'Description',
-                title: 'Emilio Blas | Software & Mechatronics Portfolio',
-                meta: 'Professional portfolio of Shuha Emilio Blas Santos: software development, Java, Python, databases, Arduino, CAD, PCB and mechatronics.'
-            }
-        };
+        /* ---------- Traducción: la clave es el texto en inglés (data-en) ---------- */
+        function tr(en, lang) {
+            if (lang === 'en') return en;
+            const r = I18N[en];
+            return (r && r[lang]) || en;
+        }
 
-        /* ---------- Idioma: traduce TODO el sitio (texto, atributos, fichas) ---------- */
         function applyLang(lang) {
             document.querySelectorAll('*').forEach(el => {
                 if (el.hasAttribute('data-en')) {
                     if (el.dataset.es === undefined) el.dataset.es = el.innerHTML;
-                    el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.dataset.es;
+                    el.innerHTML = lang === 'es' ? el.dataset.es : tr(el.getAttribute('data-en'), lang);
                 }
                 el.getAttributeNames().forEach(name => {
                     const m = name.match(/^data-en-(.+)$/);
                     if (!m) return;
                     const attr = m[1], store = 'data-es-' + attr;
                     if (!el.hasAttribute(store)) el.setAttribute(store, el.getAttribute(attr) || '');
-                    el.setAttribute(attr, lang === 'en' ? el.getAttribute(name) : el.getAttribute(store));
+                    el.setAttribute(attr, lang === 'es' ? el.getAttribute(store) : tr(el.getAttribute(name), lang));
                 });
             });
             document.documentElement.lang = lang;
             document.title = UI[lang].title;
             document.getElementById('metaDesc').setAttribute('content', UI[lang].meta);
-            document.getElementById('langBtn').innerText = lang === 'es' ? 'EN' : 'ES';
-            if (currentProject) renderProject();
+            document.getElementById('langSelect').value = lang;
+            renderProjects();
+            if (currentProject) renderModal();
+            document.getElementById('modalX').setAttribute('aria-label', UI[lang].close);
+            document.getElementById('modalClose').textContent = UI[lang].close;
             if (copied) document.getElementById('copyFeedback').textContent = UI[lang].copied;
         }
-        function toggleLang() { currentLang = currentLang === 'es' ? 'en' : 'es'; applyLang(currentLang); }
+        function setLang(lang) { currentLang = lang; applyLang(lang); }
 
-        /* ---------- Tema ---------- */
+        /* ---------- Tema (iconos SVG en el botón) ---------- */
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
             const dark = document.body.classList.contains('dark-mode');
-            document.getElementById('themeBtn').innerText = dark ? '☀️' : '🌙';
             const t = dark ? 'dark' : 'default';
-            ['ghStats', 'ghLangs'].forEach(id => { const i = document.getElementById(id); i.src = i.src.replace(/theme=[a-z]+/, 'theme=' + t); });
+            ['ghStats', 'ghLangs'].forEach(id => { const i = document.getElementById(id); if (i) i.src = i.src.replace(/theme=[a-z]+/, 'theme=' + t); });
         }
 
         /* ---------- Navegación ---------- */
@@ -1682,8 +1734,35 @@
             window.scrollTo(0, 0);
         }
 
-        /* ---------- Proyectos ---------- */
+        /* ---------- Proyectos: tarjetas ---------- */
+        function doodleOf(id) {
+            const n = document.querySelector('#doodleBank [data-doodle="' + id + '"]');
+            return n ? n.innerHTML : '';
+        }
+        function imageBlock(id, p, u) {
+            const src = COMMONS + encodeURIComponent(p.img) + '?width=900';
+            const alt = u.imgAlt + ' ' + p.title[currentLang];
+            return '<div class="project-image' + (p.fit === 'contain' ? ' contain' : '') + '">' + doodleOf(id) +
+                '<img src="' + src + '" alt="' + alt + '" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()" /></div>';
+        }
+        function renderProjects() {
+            const u = UI[currentLang];
+            document.getElementById('projectGrid').innerHTML = ORDER.map(id => {
+                const p = PROJECTS[id];
+                const visible = currentFilter === 'todos' || p.cat.split(' ').includes(currentFilter);
+                const gh = p.github
+                    ? '<a class="mini-btn" href="https://github.com/snullsh19" rel="noopener noreferrer" target="_blank">' + u.repos + '</a>'
+                    : '';
+                return '<article class="project-card" data-category="' + p.cat + '"' + (visible ? '' : ' hidden') + '>' +
+                    imageBlock(id, p, u) +
+                    '<h3>' + p.title[currentLang] + '</h3>' +
+                    '<p class="muted">' + p.summary[currentLang] + '</p>' +
+                    '<div class="project-footer"><button class="mini-btn" type="button" data-project="' + id + '">' + u.viewSheet + '</button>' + gh + '</div>' +
+                    '</article>';
+            }).join('');
+        }
         function filterProjects(category, button) {
+            currentFilter = category;
             document.querySelectorAll('#projectGrid .project-card').forEach(card => {
                 const tags = (card.dataset.category || '').split(' ');
                 card.hidden = category !== 'todos' && !tags.includes(category);
@@ -1691,17 +1770,47 @@
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             if (button) button.classList.add('active');
         }
-        function renderProject() {
-            const panel = document.getElementById('projectDetail');
-            const d = PROJECTS[currentProject][currentLang];
-            panel.innerHTML = '<h3>' + d[0] + '</h3><p class="muted">' + d[1] + '</p><button class="mini-btn" onclick="closeProject()">' + UI[currentLang].close + '</button>';
-            panel.hidden = false;
+
+        /* ---------- Proyectos: ficha técnica en pop-up ---------- */
+        const modal = document.getElementById('projectModal');
+        function renderModal() {
+            const id = currentProject, p = PROJECTS[id], u = UI[currentLang], L = currentLang;
+            document.getElementById('modalTitle').textContent = p.title[L];
+            document.getElementById('modalDoodle').innerHTML = doodleOf(id);
+            document.getElementById('modalBody').innerHTML =
+                imageBlock(id, p, u) +
+                '<h3 class="modal-h">' + u.problem + '</h3>' +
+                '<div class="modal-problem"><p>' + p.problem[L] + '</p></div>' +
+                '<h3 class="modal-h">' + u.solution + '</h3>' +
+                '<p>' + p.solution[L] + '</p>' +
+                '<h3 class="modal-h">' + u.specs + '</h3>' +
+                '<ul class="spec-list">' + p.specs.map(s => '<li>' + s[L] + '</li>').join('') + '</ul>' +
+                '<h3 class="modal-h">' + u.tech + '</h3>' +
+                '<div class="tag-list">' + p.tags.map(t => '<span class="tag">' + t + '</span>').join('') + '</div>';
+            document.getElementById('modalCta').textContent = u.cta;
+            document.getElementById('modalClose').textContent = u.close;
         }
-        function showProject(kind) {
-            currentProject = kind; renderProject();
-            document.getElementById('projectDetail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        function openProject(id) {
+            currentProject = id;
+            renderModal();
+            document.body.classList.add('modal-open');
+            if (typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open', '');
+            modal.scrollTop = 0;
         }
-        function closeProject() { currentProject = null; document.getElementById('projectDetail').hidden = true; }
+        function closeProject() {
+            if (typeof modal.close === 'function') modal.close(); else modal.removeAttribute('open');
+            currentProject = null;
+            document.body.classList.remove('modal-open');
+        }
+        document.getElementById('projectGrid').addEventListener('click', e => {
+            const b = e.target.closest('[data-project]');
+            if (b) openProject(b.dataset.project);
+        });
+        modal.addEventListener('click', e => { if (e.target === modal) closeProject(); });   /* clic fuera = cerrar */
+        modal.addEventListener('close', () => { currentProject = null; document.body.classList.remove('modal-open'); });
+        document.getElementById('modalX').addEventListener('click', closeProject);
+        document.getElementById('modalClose').addEventListener('click', closeProject);
+        document.getElementById('modalCta').addEventListener('click', () => { closeProject(); openTab('contactos'); });
 
         /* ---------- Contacto ---------- */
         function copyEmail() {
@@ -1732,23 +1841,28 @@
         /* ---------- Ojos de las ilustraciones: siguen el cursor ---------- */
         (function () {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            const pupils = Array.from(document.querySelectorAll('.pupil'));
-            let raf = 0, mx = 0, my = 0;
-            window.addEventListener('pointermove', e => {
-                mx = e.clientX; my = e.clientY;
-                if (raf) return;
-                raf = requestAnimationFrame(() => {
-                    raf = 0;
-                    pupils.forEach(p => {
-                        const r = p.previousElementSibling.getBoundingClientRect();
-                        if (!r.width) return;
-                        const dx = mx - (r.left + r.width / 2), dy = my - (r.top + r.height / 2);
-                        const d = Math.hypot(dx, dy) || 1, m = Math.min(2.6, d / 40);
-                        p.style.transform = 'translate(' + (dx / d * m) + 'px,' + (dy / d * m) + 'px)';
+            window.addEventListener('pointermove', (function () {
+                let raf = 0, mx = 0, my = 0;
+                return function (e) {
+                    mx = e.clientX; my = e.clientY;
+                    if (raf) return;
+                    raf = requestAnimationFrame(() => {
+                        raf = 0;
+                        document.querySelectorAll('.pupil').forEach(p => {
+                            const r = p.previousElementSibling.getBoundingClientRect();
+                            if (!r.width) return;
+                            const dx = mx - (r.left + r.width / 2), dy = my - (r.top + r.height / 2);
+                            const d = Math.hypot(dx, dy) || 1, m = Math.min(2.6, d / 40);
+                            p.style.transform = 'translate(' + (dx / d * m) + 'px,' + (dy / d * m) + 'px)';
+                        });
                     });
-                });
-            });
+                };
+            })());
         })();
+
+        /* ---------- Arranque ---------- */
+        applyLang('es');
+
     </script>
 </body>
 
